@@ -1,0 +1,8 @@
+{
+  "title": "Prepared corpus manifest 1.0", "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "createdAt", "root", "aggregateDigest", "sourceCount", "totalBytes", "sources"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"}, "createdAt": {"type": "string", "format": "date-time"}, "root": {"type": "string", "minLength": 1}, "aggregateDigest": {"pattern": "^[a-f0-9]{64}$"}, "sourceCount": {"type": "integer", "minimum": 0}, "totalBytes": {"type": "integer", "minimum": 0},
+    "sources": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["relativePath", "sha256", "bytes", "mediaType", "extractionMethod", "fidelity", "pageMapping", "diagrams", "limitations"], "properties": {"relativePath": {"type": "string", "minLength": 1}, "sha256": {"pattern": "^[a-f0-9]{64}$"}, "bytes": {"type": "integer", "minimum": 0}, "mediaType": {"type": "string", "minLength": 1}, "extractionMethod": {"type": "string", "minLength": 1}, "fidelity": {"enum": ["exact-text", "high", "partial", "unreadable"]}, "pageMapping": {"enum": ["not-applicable", "preserved", "mapped", "unknown"]}, "diagrams": {"enum": ["not-applicable", "interpretable", "partial", "unreadable"]}, "limitations": {"type": "array", "items": {"type": "string"}}}}}
+  }
+}

@@ -1,0 +1,41 @@
+{
+ "schema_version": 1,
+ "id": "baseline-2026-09",
+ "kind": "population",
+ "frozen_at": "2026-09-19T05:00:00Z",
+ "description": "Pre-patch commits of published advisories, measured by golden_set.py through stage 3.",
+ "size": 3,
+ "base_rate": null,
+ "measured": {
+  "reached": 3,
+  "ranked": 1
+ },
+ "operating_points": [],
+ "cases": [
+  {
+   "id": "CVE-2018-25032",
+   "repo": "https://github.com/madler/zlib",
+   "commit": "e99813dbfe9a09e33d42e8da9e550a0c4b7ff734",
+   "reached": true,
+   "ranked": false,
+   "best_rank": 352
+  },
+  {
+   "id": "CVE-2025-6170",
+   "repo": "https://github.com/GNOME/libxml2",
+   "commit": "17d950ae33c23f87692aa179bacedb6743f3188a",
+   "reached": true,
+   "ranked": true,
+   "best_rank": 1
+  },
+  {
+   "id": "CVE-2025-49795",
+   "repo": "https://github.com/GNOME/libxml2",
+   "commit": "5e9ec5c107d3f5b5179c3dbc19df43df041cd55b",
+   "reached": true,
+   "ranked": false,
+   "best_rank": 298
+  }
+ ],
+ "note": "operating_points is empty: this harness stops at stage 3 and measures no false-positive rate, so it cannot license a probability claim on its own. It fixes the population; a labelled run through stages 4 and 5 is what fills this in."
+}

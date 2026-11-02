@@ -1,0 +1,5 @@
+# ML and AI lens
+
+Permitted refinements: model/adapter/checkpoint→stored `DS`, serving `P`; dataset/evaluation set→`DS`; training/evaluation/promotion→`P`; embedding/memory→`DS`; prompt/context/turn→`DF` or retained `DS`; inference endpoint→`EP`/`P`/`DF`; retrieval source→`DS|EE`; agent/tool/plugin→`P|EE` with invocation/result flows; guardrail/evaluator→`P`; generated proposal→`DF`.
+
+Anchored questions: `MLAI-01` data provenance and poisoning; `MLAI-02` pipeline/promotion authority and tenant boundaries; `MLAI-03` model/tokenizer/config/dependency integrity and rollback; `MLAI-04` prompt-injection and instruction/data separation; `MLAI-05` retrieval/memory authorization; `MLAI-06` tool identity, destination, arguments, delegated authority, and confirmation; `MLAI-07` quotas, extraction, membership inference, and resource abuse; `MLAI-08` memorization and retention; `MLAI-09` output validation before consequential action; `MLAI-10` lineage, drift, timeout, guardrail failure, and bounded fallback.

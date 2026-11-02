@@ -1,0 +1,5 @@
+# Protocol lens
+
+Permitted refinements: peer/role→`EE|P`; endpoint→owner plus `EP`; message/frame/command→directional `DF`; session/security association→`DS`; state machine→`P` plus persistent `DS`; relay/broker→`P|EE` with separate ingress/egress flows. Messages and protocol states are assessable elements through these mappings.
+
+Anchored questions: `PROTO-01` mutual identity and role/channel/negotiation binding; `PROTO-02` replay, reorder, duplication, reflection, and cross-session defenses; `PROTO-03` canonical encoding/parser ambiguity; `PROTO-04` integrity coverage of authority-bearing fields/state; `PROTO-05` downgrade and fallback protection; `PROTO-06` payload and metadata confidentiality; `PROTO-07` authorization at each state transition; `PROTO-08` peer/session attribution and agreement/aliveness evidence; `PROTO-09` handshake, parser, amplification, fragmentation, and state-allocation bounds; `PROTO-10` timeout, rekey, resumption, restart, stale-state, channel binding, key binding, secrecy, and failure behavior.

@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "category": "hw-hardening",
+  "validator": "sec-val-hw-hardening",
+  "rules": [
+    {
+      "rule_id": "HW-001",
+      "title": "missing default-fail",
+      "cwe": "CWE-636",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\bswitch\\s*\\(|\\belse\\s+if\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "control construct with no terminating failure branch",
+      "flag_condition": "flag a switch block with no default: label, an if/else-if chain with no terminating else, a state machine assigning a state variable with no invalid-state trap, and a function whose declared error path returns a success-like 0. All four are block-shaped, not line-shaped; the pattern anchors the block and the validator reads it",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-002",
+      "title": "unvalidated encryption result",
+      "cwe": "CWE-1247",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "EVP_(?:Encrypt|Decrypt|Sign)\\w*|RSA_private_encrypt|mbedtls_rsa_rsassa\\w{0,40}_sign|psa_(?:sign|cipher)\\w*|HAL_CRYP_\\w+|AES_encrypt",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "cryptographic operation whose output is used without being checked",
+      "flag_condition": "flag when the result is used or emitted with no verify-after-sign or decrypt-after-encrypt check. A glitched signature that is never re-verified is the classic fault-injection primitive",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-003",
+      "title": "single critical decision",
+      "cwe": "CWE-1247",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "(?i:\\b(?:unlock|authorize|grant|permit|boot|jump|flash_write|erase|debug_enable|jtag|lifecycle)\\w*\\b)",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "security-critical action reached through one decision",
+      "flag_condition": "flag a single if whose body performs unlock/grant/erase/boot/write-key with no second, independent check. One skipped branch is one glitch",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-004",
+      "title": "unvalidated loop count",
+      "cwe": "CWE-1247",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:for|while)\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "loop over a secret with no post-loop iteration-count check",
+      "flag_condition": "flag loops that compare, copy, hash or clear a secret/key/MAC buffer and have no post-loop `if (i != n)` check. The pattern matches every loop on purpose: narrowing it to loops that mention a key on the same line would drop the loops whose buffer is named on the line above, and a hit this rule never took cannot be recovered downstream",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-005",
+      "title": "plain security booleans",
+      "cwe": "CWE-1247",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:bool|BOOL|_Bool|int|uint8_t|int32_t)\\s+(?:\\w{1,64}_)?(?:auth\\w*|valid\\w*|verif\\w*|(?:ok|okay|pass|passed|granted?|allowed?|secure|trusted|success)(?:_\\w+)?)\\s*[;=)]|return\\s+(?:true|false)\\s*;|if\\s*\\(\\s*\\w*(?:valid|_ok|auth)\\w{0,64}\\s*\\)",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "security state held in a plain boolean, one bit-flip from the wrong answer",
+      "flag_condition": "flag security decisions carried in a plain bool/int rather than a sparse, redundant or complemented value. The keyword must be a whole word or an underscore-delimited part of one: an earlier form used \\w*(ok|pass)\\w*, which matched token_count, lookahead and bypass_count",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-006",
+      "title": "unverified sensitive value",
+      "cwe": "CWE-1247",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:flash_read|nvm_read|otp_read|eeprom_read)\\w{0,64}\\s*\\(|HAL_FLASH\\w*|\\*\\s*\\(\\s*volatile\\s+uint(?:8|16|32|64)_t\\s*\\*\\s*\\)\\s*0[xX][0-9a-fA-F]+",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "value read from NVM, flash, OTP, fuses or EEPROM",
+      "flag_condition": "flag when the value feeds a security decision with no CRC, MAC, parity or shadow-copy verification. Non-volatile storage is writable by an attacker who holds the device",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-007",
+      "title": "missing CFI counter",
+      "cwe": "CWE-1247",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "(?i:\\b(?:verify|derive|measure|boot|attest|provision|authenticate)\\w*\\b|(?:^|::|/)unlock\\w*)",
+      "multiline": false,
+      "match_target": "function_or_path",
+      "why_flagged": "multi-step security sequence with no control-flow integrity counter",
+      "flag_condition": "flag a multi-step security function (verify then derive then unlock, or measure then compare then boot) with no monotonically-updated flow counter or step token validated at the end. Whether the steps are present is a block-shaped judgement the pattern cannot make; the pattern anchors the candidate function and the validator reads the sequence",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-008",
+      "title": "unbounded sensitive output",
+      "cwe": "CWE-1247",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:memcpy|send|write|transmit|respond)\\s*\\(|APDU\\w*",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "length of an outbound transfer may come from the request",
+      "flag_condition": "flag when the length comes from a request field while the source is a key, secret or RAM buffer, with no clamp to the actual secret length. This is the Heartbleed shape with a device on the other end",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "copy",
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-009",
+      "title": "non-constant-time comparison",
+      "cwe": "CWE-208",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:memcmp|strcmp|strncmp)\\s*\\(|(?i:(?:mac|tag|hmac|digest|signature|pin|passcode|token|secret|key|otp)\\w{0,64})\\s*[!=]=|[!=]=\\s*(?i:\\w*(?:mac|tag|hmac|digest|signature|pin|passcode|token|secret|key|otp)\\w*)",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "secret compared byte-by-byte with an early exit",
+      "flag_condition": "also flag an early return or break inside a comparison loop. HW-009 assumes the attacker holds the device and power analysis is available; LOG-008 is the same defect asked about remote timing. The scout emits both either way",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "compare",
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": true,
+      "weight": 3
+    },
+    {
+      "rule_id": "HW-010",
+      "title": "raw key material",
+      "cwe": "CWE-1300",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:uint8_t|unsigned\\s+char|char)\\s+\\w*(?i:key)\\w{0,64}\\s*\\[|\\bmemcpy\\s*\\(\\s*&?\\s*\\w*(?i:key)\\w*|(?i:\\b(?:printf|fprintf|log\\w{0,64}|puts|fwrite)\\s*\\([^)]{0,500}\\bkey\\b)",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "key bytes held, copied or printed in the clear",
+      "flag_condition": "flag key bytes in plain locals or globals, keys copied with memcpy, keys printed or logged, and keys passed by value across a module boundary, where no key handle or slot API (psa_key_id_t, ATCA_KEY_ID, keyslot) is used. The presence of a handle API is what disqualifies this, and it is not on the same line, so there is no skip path",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-011",
+      "title": "software crypto",
+      "cwe": "CWE-1240",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "(?i:\\b(?:sbox|s_box|rcon|montgomery|mod_?exp|bignum|aes_encrypt_block|aes_decrypt_block)\\b)|\\bTe[0-3]\\b|\\bTd[0-3]\\b|\\bK256\\s*\\[",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "hand-written or bundled software crypto in application code",
+      "flag_condition": "flag when a hardware engine or a vetted library is available in-tree. Software crypto on a device an attacker holds leaks through power and EM whatever the algorithm is",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    },
+    {
+      "rule_id": "HW-012",
+      "title": "zero-offset access/clearing",
+      "cwe": "CWE-1300",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "memset\\s*\\(\\s*&?\\s*\\w*(?i:key|secret|priv)\\w{0,64}\\s*,\\s*0|for\\s*\\([^;]{0,200}=\\s*0\\s*;[^)]{0,200}(?i:key|secret|priv)",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "secret cleared or walked from index 0 with a plain loop",
+      "flag_condition": "the memset may be optimised away entirely - look for explicit_bzero, memset_s, OPENSSL_cleanse or a volatile pointer instead. A zero-offset sequential walk over key material is also the easiest trace to align for a side-channel attack",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": "physical_attacker",
+      "derived": false,
+      "high_signal": false,
+      "weight": 1
+    }
+  ]
+}

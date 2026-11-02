@@ -1,0 +1,19 @@
+# Read by ripgrep, and by the search tools of hosts that are built on it, in whatever tree
+# holds this skill folder. A project install puts the skill into the workspace
+# (<workspace>/.claude/skills/sbom-recovery, <workspace>/.agents/skills/...), and a search
+# of the repositories there would return lines from it. Measured with the skills then installed
+# for two hosts, the portfolio as it then stood: a hidden-aware search for a C library function
+# returned 44 files of the skills together against 1 of the product.
+#
+# This hides nothing from a person or from a model that opens a file by its path. It keeps
+# the skill's own text, which carries the vocabulary of the task (component names, versions,
+# licences, build-system words), out of searches of the code under analysis:
+#   references/          the contract, the role file, the limits
+#   scripts/             the tools, whose source holds the word lists of the analysis
+#   assets/              the tables the analysis reads: library names, header maps, licence ids
+# SKILL.md stays visible. The patterns are anchored to the skill folder, so a `scripts/` of a
+# repository under analysis is still searched.
+# To search the skill itself, ask for it: rg --no-ignore PATTERN <skill folder>.
+/references/
+/scripts/
+/assets/

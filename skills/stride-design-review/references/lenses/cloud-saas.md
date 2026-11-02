@@ -1,0 +1,5 @@
+# Cloud and SaaS lens
+
+Permitted refinements: tenant/security domain→tags and cited `TB`; account/project/region/environment→tags or cited boundary; service/workload/function/job→`P`; API/webhook→`EP` plus `DF`; managed dependency→provider `EE`; queue/topic→persistent `DS` plus separate publish/delivery/ack/retry flows; control plane→operation `P` and state `DS`; principal/support actor→`EE`.
+
+Anchored questions: `CLOUD-01` tenant-context binding; `CLOUD-02` tenant/object/action authorization; `CLOUD-03` user/service/workload credential lifecycle; `CLOUD-04` control-plane authority and separation of duties; `CLOUD-05` API/webhook replay, destination, confused-deputy, and SSRF controls; `CLOUD-06` replicas/backups/caches/logs/residency/deletion; `CLOUD-07` queue duplicates/reorder/poison/retry/dead-letter behavior; `CLOUD-08` tenant-aware quotas, fan-out, expensive queries, spend, and noisy neighbors; `CLOUD-09` software/configuration provenance; `CLOUD-10` support/break-glass/provider actions and dependency failure.

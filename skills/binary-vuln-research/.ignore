@@ -1,0 +1,15 @@
+# Read by ripgrep, and by the search tools of hosts that are built on it, in whatever tree
+# holds this skill folder. A project install puts the skill inside the tree under research
+# (<tree>/.claude/skills/binary-vuln-research, <tree>/.agents/skills/...), and a search of
+# that tree would return the detector patterns and the role file. Not measured for this skill.
+#
+# This hides nothing from a person, from grep, strings or a decompiler import, or from a model
+# that opens a file by its path. It keeps the skill's own text out of searches of the code
+# under research:
+#   references/   the patterns, the reachability standard, the role file, the formats
+#   scripts/      the CVSS calculator
+# SKILL.md stays visible. The patterns are anchored to the skill folder, so a `scripts/` of
+# the tree under research is still searched.
+# To search the skill itself, ask for it: rg --no-ignore PATTERN <skill folder>.
+/references/
+/scripts/

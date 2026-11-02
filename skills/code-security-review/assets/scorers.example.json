@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+
+  "_readme": [
+    "The scorer config score_functions.py --config reads. Copy it to",
+    "security-review/scorers.json (or anywhere) and edit; nothing reads this",
+    "file by default, so the example can name an endpoint that does not exist.",
+    "",
+    "`backend` picks the default; --backend overrides it. `backends.<name>` is",
+    "handed to that backend and to no other, so three configurations can live",
+    "here and only the selected one is read.",
+    "",
+    "THE THREE THINGS TO GET RIGHT IN `finetuned`, in order of how quietly they",
+    "fail:",
+    "",
+    "  context_profile  must name the profile extract_functions.py --context-profile",
+    "                   was run with. A model fed a window it was not trained on",
+    "                   still returns a number; the number is just not calibrated.",
+    "                   score_functions.py compares this against the corpus and",
+    "                   downgrades the run to an ordering when they differ",
+    "                   (downgrade code context_profile_mismatch).",
+    "  verdict_tokens   the exact token strings the model was trained to emit. A",
+    "                   near miss does not error - the endpoint answers, the",
+    "                   tokens are absent from the top-k, and every score comes",
+    "                   from the bounded fallback. scorer-report.json counts",
+    "                   those, and a run where the count equals the corpus size",
+    "                   has the wrong tokens configured.",
+    "  evalset_id       the bare id (a name, never a path) of a file under",
+    "                   assets/evalsets/ frozen BEFORE the ledger started",
+    "                   producing samples, whose kind is \"calibration\" and which",
+    "                   records a measured base_rate and at least one measured",
+    "                   operating point. A population such as",
+    "                   baseline-2026-09 fixes a population and is refused. It is",
+    "                   the only thing that lets this backend keep",
+    "                   score_kind: \"probability\"; see assets/evalsets/README.md.",
+    "",
+    "Numeric settings (batch_size, timeout, max_retries, retry_backoff_seconds,",
+    "logprobs) take their default when absent and are refused when present and",
+    "out of range; max_retries: 0 disables retries. A redirect from the endpoint",
+    "is refused rather than followed, so `endpoint` must be the final URL.",
+    "",
+    "`backends.rules.weights` overrides any of the WEIGHTS in",
+    "tools/scorers/rules_backend.py, and scorer-report.json prints the weights a",
+    "run applied. repeat_decay 0, rule_weight_cap 12 and sample_tree_penalty 0",
+    "together reproduce rules@1.0.0; a config copied from an older example that",
+    "still says rule_weight_cap 12 keeps the old cap.",
+    "",
+    "`operating_point` is optional. The config chooses the mode, the flags",
+    "(--strict-k, --loose-percent, --budget) choose the size: a `k` or `percent`",
+    "written here is used only when the flag is not given, and a size flag for a",
+    "tier this config puts in another mode is refused. mode \"score\" is",
+    "accepted ONLY when the run really carries a calibrated probability - over an",
+    "ordinal score it is a hard error, not a downgrade, and there is no flag that",
+    "relaxes it. See pipeline-contract.md §6."
+  ],
+
+  "backend": "rules",
+
+  "backends": {
+
+    "rules": {
+      "weights": {
+        "rule_weight_cap": 16.0,
+        "repeat_decay": 1.0,
+        "high_signal_first": 2.0,
+        "reach_0_1_hops": 3.0,
+        "test_tree_penalty": -6.0,
+        "sample_tree_penalty": -3.0
+      }
+    },
+
+    "llm-triage": {
+    },
+
+    "finetuned": {
+      "endpoint": "http://127.0.0.1:8000",
+      "model": "sec-func-clf-v1",
+      "api_key_env": null,
+      "verdict_tokens": {
+        "positive": "vulnerable",
+        "negative": "safe"
+      },
+      "context_profile": "finetune-v1",
+      "evalset_id": null,
+      "batch_size": 16,
+      "timeout": 60,
+      "max_retries": 2,
+      "logprobs": 20,
+      "prompt_template": "### FILE: {{FILE}}\n### FUNCTION: {{NAME}} ({{LANGUAGE}}), lines {{LINE_START}}-{{LINE_END}}\n### SIGNATURE: {{SIGNATURE}}\n### RULE HITS:\n{{RULE_HITS}}\n### CODE:\n{{CONTEXT}}\n### VULNERABLE:"
+    }
+  },
+
+  "operating_point": {
+    "strict": { "mode": "top_k" },
+    "loose": { "mode": "top_percent" }
+  }
+}

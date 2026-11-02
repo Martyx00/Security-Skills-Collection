@@ -1,0 +1,590 @@
+{
+  "title": "STRIDE run manifest 1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packageVersion",
+    "protocolVersion",
+    "runId",
+    "createdAt",
+    "updatedAt",
+    "status",
+    "mode",
+    "envelope",
+    "dispatch",
+    "environment",
+    "corpus",
+    "artifacts",
+    "stages",
+    "stage3Ledger"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.1"
+    },
+    "packageVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "protocolVersion": {
+      "const": "2.0"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "initializing",
+        "stage1",
+        "stage2",
+        "stage3",
+        "finalizing",
+        "completed",
+        "failed"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "full",
+        "stage1",
+        "stage2",
+        "stage3",
+        "verify-one"
+      ]
+    },
+    "envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "docsRoot",
+        "runRoot",
+        "domainLens",
+        "verificationFallback",
+        "verificationMode",
+        "maxQueueSize",
+        "baselineReport",
+        "resourceIsolationConfirmed",
+        "resourceIsolationMethod",
+        "inheritedResources"
+      ],
+      "properties": {
+        "docsRoot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runRoot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "domainLens": {
+          "enum": [
+            "protocol",
+            "device-embedded",
+            "cloud-saas",
+            "ml-ai",
+            "none"
+          ]
+        },
+        "verificationFallback": {
+          "enum": [
+            "fail-closed",
+            "inline"
+          ]
+        },
+        "verificationMode": {
+          "enum": [
+            "standard",
+            "blinded"
+          ]
+        },
+        "maxQueueSize": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "baselineReport": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extractionMap": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resourceIsolationConfirmed": {
+          "type": "boolean"
+        },
+        "resourceIsolationMethod": {
+          "enum": [
+            "host-subagent",
+            "interactive-inventoried"
+          ]
+        },
+        "inheritedResources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dispatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "reason",
+        "units"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "subagent",
+            "inline"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dispatchUnit"
+          }
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coordinatorModel",
+        "stage1Model",
+        "stage2Model",
+        "sweepModel",
+        "verifierModel",
+        "runtime",
+        "validatedModelTier",
+        "validationEvidence",
+        "schemaVersions",
+        "schemaDigests"
+      ],
+      "properties": {
+        "coordinatorModel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage1Model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage2Model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sweepModel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verifierModel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validatedModelTier": {
+          "enum": [
+            "unvalidated-reference",
+            "measured"
+          ]
+        },
+        "validationEvidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "schemaVersions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "corpusManifest",
+            "runManifest",
+            "issueIndex",
+            "verificationLedger",
+            "verifierRequest",
+            "verifierResult",
+            "sweepResult"
+          ],
+          "properties": {
+            "corpusManifest": {
+              "const": "1.0"
+            },
+            "runManifest": {
+              "const": "1.1"
+            },
+            "issueIndex": {
+              "const": "1.0"
+            },
+            "verificationLedger": {
+              "const": "1.0"
+            },
+            "verifierRequest": {
+              "const": "1.0"
+            },
+            "verifierResult": {
+              "const": "1.0"
+            },
+            "sweepResult": {
+              "const": "1.0"
+            }
+          }
+        },
+        "schemaDigests": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "corpus-manifest-1.0.json",
+            "run-manifest-1.1.json",
+            "issue-index-1.0.json",
+            "verification-ledger-1.0.json",
+            "verifier-request-1.0.json",
+            "verifier-result-1.0.json",
+            "sweep-result-1.0.json"
+          ],
+          "properties": {
+            "corpus-manifest-1.0.json": {
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "run-manifest-1.1.json": {
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "issue-index-1.0.json": {
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "verification-ledger-1.0.json": {
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "verifier-request-1.0.json": {
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "verifier-result-1.0.json": {
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sweep-result-1.0.json": {
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "reasoningEffort": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "coordinator",
+            "stage1",
+            "stage2",
+            "sweep",
+            "verifier"
+          ],
+          "properties": {
+            "coordinator": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                "unspecified"
+              ]
+            },
+            "stage1": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                "unspecified"
+              ]
+            },
+            "stage2": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                "unspecified"
+              ]
+            },
+            "sweep": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                "unspecified"
+              ]
+            },
+            "verifier": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                "unspecified"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifestPath",
+        "manifestSha256",
+        "aggregateDigest",
+        "sourceCount",
+        "totalBytes"
+      ],
+      "properties": {
+        "manifestPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "manifestSha256": {
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "aggregateDigest": {
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "totalBytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes",
+          "schema"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "stages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage1",
+        "stage2",
+        "stage3"
+      ],
+      "properties": {
+        "stage1": {
+          "$ref": "#/$defs/stage"
+        },
+        "stage2": {
+          "$ref": "#/$defs/stage"
+        },
+        "stage3": {
+          "$ref": "#/$defs/stage"
+        }
+      }
+    },
+    "stage3Ledger": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "accepted",
+        "inline",
+        "terminal"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "accepted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "inline": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "terminal": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "replyNotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "unit",
+          "kind",
+          "text"
+        ],
+        "properties": {
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "fence_unclosed"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "generation",
+        "validationErrors"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "pending",
+            "invoked",
+            "invalid",
+            "accepted",
+            "terminal"
+          ]
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dispatchUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit",
+        "role",
+        "mode",
+        "model",
+        "recordedAt",
+        "recordings"
+      ],
+      "properties": {
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "designer",
+            "gap",
+            "sweep",
+            "verifier"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "subagent",
+            "inline"
+          ]
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "recordings": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

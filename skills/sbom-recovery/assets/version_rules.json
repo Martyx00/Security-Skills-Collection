@@ -1,0 +1,566 @@
+{
+  "schema": 1,
+  "rules": [
+    {
+      "library": "zlib",
+      "files": [
+        "zlib.h"
+      ],
+      "macro": "ZLIB_VERSION",
+      "pattern": "#\\s*define\\s+ZLIB_VERSION\\s+\"([^\"]+)\"",
+      "exclude_if": [
+        "MZ_VERSION",
+        "miniz"
+      ]
+    },
+    {
+      "library": "miniz",
+      "files": [
+        "miniz.h",
+        "miniz.c"
+      ],
+      "identity": [
+        "#\\s*define\\s+MZ_VERSION\\b"
+      ],
+      "banner_version": "miniz\\.c\\s+(\\d+\\.\\d+\\.\\d+)\\s+-",
+      "ignore_macros": [
+        "MZ_VERSION",
+        "ZLIB_VERSION"
+      ]
+    },
+    {
+      "library": "curl",
+      "files": [
+        "curlver.h"
+      ],
+      "macro": "LIBCURL_VERSION",
+      "pattern": "#\\s*define\\s+LIBCURL_VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "OpenSSL",
+      "files": [
+        "opensslv.h"
+      ],
+      "macro": "OPENSSL_VERSION_TEXT",
+      "patterns": [
+        "OPENSSL_VERSION_TEXT\\s+\"OpenSSL\\s+([0-9][^ \"]*)",
+        "#\\s*define\\s+OPENSSL_VERSION_STR\\s+\"([^\"]+)\""
+      ],
+      "placeholders": [
+        "{-",
+        "@"
+      ],
+      "templates": [
+        {
+          "file": "opensslv.h.in",
+          "companion": "VERSION.dat",
+          "keys": [
+            "MAJOR",
+            "MINOR",
+            "PATCH"
+          ],
+          "pre": "PRE_RELEASE_TAG"
+        }
+      ]
+    },
+    {
+      "library": "cJSON",
+      "files": [
+        "cJSON.h"
+      ],
+      "parts": [
+        "CJSON_VERSION_MAJOR",
+        "CJSON_VERSION_MINOR",
+        "CJSON_VERSION_PATCH"
+      ],
+      "banners": [
+        "Dave Gamble"
+      ]
+    },
+    {
+      "library": "SQLite",
+      "files": [
+        "sqlite3.h"
+      ],
+      "macro": "SQLITE_VERSION",
+      "pattern": "#\\s*define\\s+SQLITE_VERSION\\s+\"([^\"]+)\"",
+      "placeholders": [
+        "--VERS--"
+      ]
+    },
+    {
+      "library": "LZ4",
+      "files": [
+        "lz4.h"
+      ],
+      "parts": [
+        "LZ4_VERSION_MAJOR",
+        "LZ4_VERSION_MINOR",
+        "LZ4_VERSION_RELEASE"
+      ]
+    },
+    {
+      "library": "googletest",
+      "files": [
+        "CMakeLists.txt"
+      ],
+      "project_version": "googletest-distribution"
+    },
+    {
+      "library": "nlohmann/json",
+      "files": [
+        "json.hpp",
+        "abi_macros.hpp"
+      ],
+      "parts": [
+        "NLOHMANN_JSON_VERSION_MAJOR",
+        "NLOHMANN_JSON_VERSION_MINOR",
+        "NLOHMANN_JSON_VERSION_PATCH"
+      ]
+    },
+    {
+      "library": "Zstandard",
+      "files": [
+        "zstd.h"
+      ],
+      "parts": [
+        "ZSTD_VERSION_MAJOR",
+        "ZSTD_VERSION_MINOR",
+        "ZSTD_VERSION_RELEASE"
+      ]
+    },
+    {
+      "library": "Expat",
+      "files": [
+        "expat.h"
+      ],
+      "parts": [
+        "XML_MAJOR_VERSION",
+        "XML_MINOR_VERSION",
+        "XML_MICRO_VERSION"
+      ]
+    },
+    {
+      "library": "libpng",
+      "files": [
+        "png.h"
+      ],
+      "macro": "PNG_LIBPNG_VER_STRING",
+      "pattern": "#\\s*define\\s+PNG_LIBPNG_VER_STRING\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "mbed TLS",
+      "files": [
+        "version.h",
+        "build_info.h"
+      ],
+      "macro": "MBEDTLS_VERSION_STRING",
+      "pattern": "#\\s*define\\s+MBEDTLS_VERSION_STRING\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "wolfSSL",
+      "files": [
+        "version.h"
+      ],
+      "macro": "LIBWOLFSSL_VERSION_STRING",
+      "pattern": "#\\s*define\\s+LIBWOLFSSL_VERSION_STRING\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "lwIP",
+      "files": [
+        "init.h"
+      ],
+      "parts": [
+        "LWIP_VERSION_MAJOR",
+        "LWIP_VERSION_MINOR",
+        "LWIP_VERSION_REVISION"
+      ]
+    },
+    {
+      "library": "FreeRTOS-Kernel",
+      "files": [
+        "task.h"
+      ],
+      "macro": "tskKERNEL_VERSION_NUMBER",
+      "pattern": "#\\s*define\\s+tskKERNEL_VERSION_NUMBER\\s+\"V?([^\"]+)\""
+    },
+    {
+      "library": "SDL2",
+      "files": [
+        "SDL_version.h"
+      ],
+      "parts": [
+        "SDL_MAJOR_VERSION",
+        "SDL_MINOR_VERSION",
+        "SDL_PATCHLEVEL"
+      ]
+    },
+    {
+      "library": "libxml2",
+      "files": [
+        "xmlversion.h"
+      ],
+      "macro": "LIBXML_DOTTED_VERSION",
+      "pattern": "#\\s*define\\s+LIBXML_DOTTED_VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "PCRE2",
+      "files": [
+        "pcre2.h"
+      ],
+      "parts": [
+        "PCRE2_MAJOR",
+        "PCRE2_MINOR"
+      ]
+    },
+    {
+      "library": "XZ Utils",
+      "files": [
+        "version.h"
+      ],
+      "parts": [
+        "LZMA_VERSION_MAJOR",
+        "LZMA_VERSION_MINOR",
+        "LZMA_VERSION_PATCH"
+      ]
+    },
+    {
+      "library": "libuv",
+      "files": [
+        "version.h"
+      ],
+      "parts": [
+        "UV_VERSION_MAJOR",
+        "UV_VERSION_MINOR",
+        "UV_VERSION_PATCH"
+      ]
+    },
+    {
+      "library": "Jansson",
+      "files": [
+        "jansson.h"
+      ],
+      "macro": "JANSSON_VERSION",
+      "pattern": "#\\s*define\\s+JANSSON_VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "FreeType",
+      "files": [
+        "freetype.h"
+      ],
+      "parts": [
+        "FREETYPE_MAJOR",
+        "FREETYPE_MINOR",
+        "FREETYPE_PATCH"
+      ]
+    },
+    {
+      "library": "HarfBuzz",
+      "files": [
+        "hb-version.h"
+      ],
+      "macro": "HB_VERSION_STRING",
+      "pattern": "#\\s*define\\s+HB_VERSION_STRING\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "libssh2",
+      "files": [
+        "libssh2.h"
+      ],
+      "macro": "LIBSSH2_VERSION",
+      "pattern": "#\\s*define\\s+LIBSSH2_VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "c-ares",
+      "files": [
+        "ares_version.h"
+      ],
+      "macro": "ARES_VERSION_STR",
+      "pattern": "#\\s*define\\s+ARES_VERSION_STR\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "libarchive",
+      "files": [
+        "archive.h"
+      ],
+      "macro": "ARCHIVE_VERSION_ONLY_STRING",
+      "pattern": "#\\s*define\\s+ARCHIVE_VERSION_ONLY_STRING\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "nghttp2",
+      "files": [
+        "nghttp2ver.h"
+      ],
+      "macro": "NGHTTP2_VERSION",
+      "pattern": "#\\s*define\\s+NGHTTP2_VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "TinyXML-2",
+      "files": [
+        "tinyxml2.h"
+      ],
+      "parts": [
+        "TIXML2_MAJOR_VERSION",
+        "TIXML2_MINOR_VERSION",
+        "TIXML2_PATCH_VERSION"
+      ]
+    },
+    {
+      "library": "spdlog",
+      "files": [
+        "version.h"
+      ],
+      "parts": [
+        "SPDLOG_VER_MAJOR",
+        "SPDLOG_VER_MINOR",
+        "SPDLOG_VER_PATCH"
+      ]
+    },
+    {
+      "library": "RapidJSON",
+      "files": [
+        "rapidjson.h"
+      ],
+      "parts": [
+        "RAPIDJSON_MAJOR_VERSION",
+        "RAPIDJSON_MINOR_VERSION",
+        "RAPIDJSON_PATCH_VERSION"
+      ]
+    },
+    {
+      "library": "libsodium",
+      "files": [
+        "version.h"
+      ],
+      "macro": "SODIUM_VERSION_STRING",
+      "pattern": "#\\s*define\\s+SODIUM_VERSION_STRING\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "protobuf-c",
+      "files": [
+        "protobuf-c.h"
+      ],
+      "macro": "PROTOBUF_C_VERSION",
+      "pattern": "#\\s*define\\s+PROTOBUF_C_VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "nanopb",
+      "files": [
+        "pb.h"
+      ],
+      "macro": "NANOPB_VERSION",
+      "pattern": "#\\s*define\\s+NANOPB_VERSION\\s+\"?(?:nanopb-)?([0-9][^\"\\s]*)\"?"
+    },
+    {
+      "library": "LVGL",
+      "files": [
+        "lvgl.h",
+        "lv_version.h"
+      ],
+      "parts": [
+        "LVGL_VERSION_MAJOR",
+        "LVGL_VERSION_MINOR",
+        "LVGL_VERSION_PATCH"
+      ]
+    },
+    {
+      "library": "Mongoose",
+      "files": [
+        "mongoose.h"
+      ],
+      "macro": "MG_VERSION",
+      "pattern": "#\\s*define\\s+MG_VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "uthash",
+      "files": [
+        "uthash.h"
+      ],
+      "macro": "UTHASH_VERSION",
+      "pattern": "#\\s*define\\s+UTHASH_VERSION\\s+\"?([0-9][0-9.]*)\"?"
+    },
+    {
+      "library": "Lua",
+      "files": [
+        "lua.h"
+      ],
+      "parts": [
+        "LUA_VERSION_MAJOR",
+        "LUA_VERSION_MINOR",
+        "LUA_VERSION_RELEASE"
+      ]
+    },
+    {
+      "library": "LuaJIT",
+      "files": [
+        "luajit.h"
+      ],
+      "macro": "LUAJIT_VERSION",
+      "pattern": "#\\s*define\\s+LUAJIT_VERSION\\s+\"LuaJIT\\s+([^\"]+)\""
+    },
+    {
+      "library": "LibTIFF",
+      "files": [
+        "tiffvers.h"
+      ],
+      "macro": "TIFFLIB_VERSION_STR",
+      "pattern": "#\\s*define\\s+TIFFLIB_VERSION_STR\\s+\"LIBTIFF,\\s*Version\\s+([^\\\\\"\\s]+)"
+    },
+    {
+      "library": "GIFLIB",
+      "files": [
+        "gif_lib.h"
+      ],
+      "parts": [
+        "GIFLIB_MAJOR",
+        "GIFLIB_MINOR",
+        "GIFLIB_RELEASE"
+      ]
+    },
+    {
+      "library": "libjpeg-turbo",
+      "files": [
+        "jconfig.h"
+      ],
+      "macro": "LIBJPEG_TURBO_VERSION",
+      "pattern": "#\\s*define\\s+LIBJPEG_TURBO_VERSION\\s+\"?([0-9][0-9.]*)\"?"
+    },
+    {
+      "library": "tinycbor",
+      "files": [
+        "tinycbor-version.h"
+      ],
+      "parts": [
+        "TINYCBOR_VERSION_MAJOR",
+        "TINYCBOR_VERSION_MINOR",
+        "TINYCBOR_VERSION_PATCH"
+      ]
+    },
+    {
+      "library": "LodePNG",
+      "files": [
+        "lodepng.h"
+      ],
+      "macro": "LODEPNG_VERSION_STRING",
+      "pattern": "#\\s*define\\s+LODEPNG_VERSION_STRING\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "llhttp",
+      "files": [
+        "llhttp.h"
+      ],
+      "parts": [
+        "LLHTTP_VERSION_MAJOR",
+        "LLHTTP_VERSION_MINOR",
+        "LLHTTP_VERSION_PATCH"
+      ]
+    },
+    {
+      "library": "libevent",
+      "files": [
+        "event-config.h"
+      ],
+      "macro": "EVENT__VERSION",
+      "pattern": "#\\s*define\\s+EVENT__VERSION\\s+\"([^\"]+)\""
+    },
+    {
+      "library": "stb",
+      "files": [
+        "stb_image.h",
+        "stb_image_write.h",
+        "stb_image_resize.h",
+        "stb_truetype.h",
+        "stb_rect_pack.h",
+        "stb_vorbis.c",
+        "stb_textedit.h",
+        "stb_perlin.h",
+        "stb_sprintf.h",
+        "stb_ds.h"
+      ],
+      "banner_version": "\\b(?:stb_\\w+|Ogg Vorbis audio decoder)\\s+-\\s+v(\\d+\\.\\d+)"
+    }
+  ],
+  "tag_patterns": [
+    {
+      "library": "OpenSSL",
+      "regex": "^OpenSSL_(\\d+)_(\\d+)_(\\d+)([a-z]?)$",
+      "format": "{1}.{2}.{3}{4}"
+    },
+    {
+      "library": "OpenSSL",
+      "regex": "^openssl-(\\d+\\.\\d+\\.\\d+)$",
+      "format": "{1}"
+    },
+    {
+      "library": "curl",
+      "regex": "^curl-(\\d+)_(\\d+)_(\\d+)$",
+      "format": "{1}.{2}.{3}"
+    },
+    {
+      "library": "lwIP",
+      "regex": "^STABLE-(\\d+)_(\\d+)_(\\d+)_RELEASE$",
+      "format": "{1}.{2}.{3}"
+    },
+    {
+      "library": "Expat",
+      "regex": "^R_(\\d+)_(\\d+)_(\\d+)$",
+      "format": "{1}.{2}.{3}"
+    },
+    {
+      "library": "*",
+      "regex": "^V_(\\d+)_(\\d+)_P(\\d+)$",
+      "format": "{1}.{2}p{3}"
+    },
+    {
+      "library": "*",
+      "regex": "^v?(\\d+(?:\\.\\d+){1,3})$",
+      "format": "{1}"
+    }
+  ],
+  "snapshot_suffixes": [
+    "-DEV",
+    "-dev",
+    "-devel",
+    "-motley",
+    ".git",
+    "-git",
+    "+git",
+    "-SNAPSHOT",
+    "-snapshot",
+    "-nightly",
+    "-next"
+  ],
+  "channel_suffixes": {
+    "vcpkg": "#\\d+$",
+    "wrapdb": "-\\d+$",
+    "hunter": "-p\\d+$",
+    "bcr": "\\.bcr\\.\\d+$"
+  },
+  "prerelease": "^(\\d+(?:\\.\\d+)+)[-._]?((?:rc|alpha|beta)[.]?\\d*)$",
+  "release_scheme": "^\\d+(?:\\.\\d+){0,3}(?:[a-z]|p\\d+|-(?:rc|alpha|beta)\\d*)?$|^\\d{4}-\\d{2}-\\d{2}$",
+  "cpe_spellings": [
+    {
+      "library": "LodePNG",
+      "regex": "^(\\d{4})(\\d{2})(\\d{2})$",
+      "version": "{0}",
+      "cpe_version": "{1}-{2}-{3}",
+      "note": "NVD spells LodePNG release dates YYYY-MM-DD in the CPE version"
+    },
+    {
+      "library": "FreeRTOS-Kernel",
+      "regex": "^v?(\\d+\\.\\d+\\.\\d+)[\\s_-]*lts[\\s_-]*patch[\\s_-]*(\\d+)$",
+      "version": "{1}",
+      "cpe_version": "{1}",
+      "cpe_update": "patch{2}",
+      "note": "FreeRTOS LTS patch {2} of release {1}: the CPE update is patch{2} (NVD also sets the software edition lts, which needs a cpe_override)"
+    },
+    {
+      "library": "FreeRTOS",
+      "regex": "^v?(\\d+\\.\\d+\\.\\d+)[\\s_-]*lts[\\s_-]*patch[\\s_-]*(\\d+)$",
+      "version": "{1}",
+      "cpe_version": "{1}",
+      "cpe_update": "patch{2}",
+      "note": "FreeRTOS LTS patch {2} of release {1}: the CPE update is patch{2} (NVD also sets the software edition lts, which needs a cpe_override)"
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "libraries": {
+    "Boost": {
+      "strong": [
+        "boost::*"
+      ],
+      "weak": []
+    },
+    "D-Bus": {
+      "strong": [
+        "dbus_*"
+      ],
+      "weak": []
+    },
+    "Expat": {
+      "strong": [
+        "XML_*"
+      ],
+      "weak": []
+    },
+    "FFmpeg": {
+      "strong": [
+        "av_*",
+        "avcodec_*",
+        "avformat_*",
+        "avutil_*",
+        "swr_*",
+        "sws_*"
+      ],
+      "weak": []
+    },
+    "FatFs": {
+      "strong": [
+        "f_close",
+        "f_lseek",
+        "f_mkfs",
+        "f_mount",
+        "f_open",
+        "f_opendir",
+        "f_read",
+        "f_readdir",
+        "f_stat",
+        "f_unlink",
+        "f_write"
+      ],
+      "weak": []
+    },
+    "FreeType": {
+      "strong": [
+        "FT_*"
+      ],
+      "weak": []
+    },
+    "GIFLIB": {
+      "strong": [
+        "DGif*",
+        "EGif*"
+      ],
+      "weak": []
+    },
+    "GLib": {
+      "strong": [
+        "G_*",
+        "g_*"
+      ],
+      "weak": []
+    },
+    "HarfBuzz": {
+      "strong": [
+        "hb_*"
+      ],
+      "weak": []
+    },
+    "IJG libjpeg": {
+      "strong": [
+        "jpeg_*"
+      ],
+      "weak": []
+    },
+    "Jansson": {
+      "strong": [
+        "json_*"
+      ],
+      "weak": []
+    },
+    "LVGL": {
+      "strong": [
+        "LV_*",
+        "lv_*"
+      ],
+      "weak": []
+    },
+    "LZ4": {
+      "strong": [
+        "LZ4F_*",
+        "LZ4HC_*",
+        "LZ4_*"
+      ],
+      "weak": []
+    },
+    "LibTIFF": {
+      "strong": [
+        "TIFF*"
+      ],
+      "weak": []
+    },
+    "LibYAML": {
+      "strong": [
+        "yaml_*"
+      ],
+      "weak": []
+    },
+    "Lua": {
+      "strong": [
+        "luaL_*",
+        "lua_*"
+      ],
+      "weak": []
+    },
+    "LuaJIT": {
+      "strong": [
+        "luaJIT_*",
+        "luaL_*",
+        "lua_*"
+      ],
+      "weak": []
+    },
+    "OpenSSL": {
+      "strong": [
+        "BIO_*",
+        "EC_KEY_*",
+        "ERR_*",
+        "EVP_*",
+        "HMAC_*",
+        "OPENSSL_*",
+        "OpenSSL_*",
+        "RSA_*",
+        "SSL_*",
+        "TLS_client_method",
+        "TLS_method",
+        "TLS_server_method",
+        "X509_*"
+      ],
+      "weak": []
+    },
+    "PCRE": {
+      "strong": [
+        "pcre16_*",
+        "pcre32_*",
+        "pcre_*"
+      ],
+      "weak": []
+    },
+    "PCRE2": {
+      "strong": [
+        "PCRE2_*",
+        "pcre2_*"
+      ],
+      "weak": []
+    },
+    "Protocol Buffers": {
+      "strong": [
+        "google::protobuf::*"
+      ],
+      "weak": []
+    },
+    "RapidJSON": {
+      "strong": [
+        "rapidjson::*"
+      ],
+      "weak": []
+    },
+    "SDL2": {
+      "strong": [
+        "SDL_*"
+      ],
+      "weak": []
+    },
+    "SQLite": {
+      "strong": [
+        "sqlite3_*"
+      ],
+      "weak": []
+    },
+    "TinyXML-2": {
+      "strong": [
+        "tinyxml2::*"
+      ],
+      "weak": []
+    },
+    "XZ Utils": {
+      "strong": [
+        "lzma_*"
+      ],
+      "weak": []
+    },
+    "Zstandard": {
+      "strong": [
+        "ZSTD_*"
+      ],
+      "weak": []
+    },
+    "bzip2": {
+      "strong": [
+        "BZ2_*"
+      ],
+      "weak": []
+    },
+    "c-ares": {
+      "strong": [
+        "ares_*"
+      ],
+      "weak": []
+    },
+    "cJSON": {
+      "strong": [
+        "cJSON_*"
+      ],
+      "weak": []
+    },
+    "curl": {
+      "strong": [
+        "CURLE_*",
+        "CURLINFO_*",
+        "CURLOPT_*",
+        "curl_*"
+      ],
+      "weak": []
+    },
+    "fmt": {
+      "strong": [
+        "fmt::*"
+      ],
+      "weak": []
+    },
+    "gRPC": {
+      "strong": [
+        "grpc::*",
+        "grpc_*"
+      ],
+      "weak": []
+    },
+    "googletest": {
+      "strong": [
+        "ASSERT_*",
+        "EXPECT_*",
+        "TEST",
+        "TEST_F",
+        "TEST_P",
+        "TYPED_TEST",
+        "testing::*"
+      ],
+      "weak": []
+    },
+    "json-c": {
+      "strong": [
+        "json_*"
+      ],
+      "weak": []
+    },
+    "libarchive": {
+      "strong": [
+        "archive_*"
+      ],
+      "weak": []
+    },
+    "libevent": {
+      "strong": [
+        "bufferevent_*",
+        "evbuffer_*",
+        "event_*",
+        "evhttp_*",
+        "evutil_*"
+      ],
+      "weak": []
+    },
+    "libjpeg-turbo": {
+      "strong": [
+        "jpeg_*",
+        "tj*"
+      ],
+      "weak": []
+    },
+    "libpng": {
+      "strong": [
+        "png_*"
+      ],
+      "weak": []
+    },
+    "libsodium": {
+      "strong": [
+        "crypto_*",
+        "sodium_*"
+      ],
+      "weak": []
+    },
+    "libssh2": {
+      "strong": [
+        "libssh2_*"
+      ],
+      "weak": []
+    },
+    "libusb": {
+      "strong": [
+        "libusb_*"
+      ],
+      "weak": []
+    },
+    "libuv": {
+      "strong": [
+        "uv_*"
+      ],
+      "weak": []
+    },
+    "libwebp": {
+      "strong": [
+        "WebP*"
+      ],
+      "weak": []
+    },
+    "libxml2": {
+      "strong": [
+        "LIBXML_*",
+        "html*",
+        "xml*"
+      ],
+      "weak": []
+    },
+    "littlefs": {
+      "strong": [
+        "lfs_*"
+      ],
+      "weak": []
+    },
+    "lwIP": {
+      "strong": [
+        "dhcp_*",
+        "etharp_*",
+        "lwip_*",
+        "netconn_*",
+        "netif_*",
+        "pbuf_*",
+        "tcpip_*"
+      ],
+      "weak": []
+    },
+    "mbed TLS": {
+      "strong": [
+        "MBEDTLS_*",
+        "mbedtls_*"
+      ],
+      "weak": []
+    },
+    "miniz": {
+      "strong": [
+        "mz_*",
+        "tdefl_*",
+        "tinfl_*"
+      ],
+      "weak": []
+    },
+    "nanopb": {
+      "strong": [
+        "pb_*"
+      ],
+      "weak": []
+    },
+    "nlohmann/json": {
+      "strong": [
+        "nlohmann::*"
+      ],
+      "weak": []
+    },
+    "protobuf-c": {
+      "strong": [
+        "protobuf_c_*"
+      ],
+      "weak": []
+    },
+    "spdlog": {
+      "strong": [
+        "spdlog::*"
+      ],
+      "weak": []
+    },
+    "stb": {
+      "strong": [
+        "stb_*",
+        "stbi_*",
+        "stbir_*",
+        "stbtt_*"
+      ],
+      "weak": []
+    },
+    "systemd": {
+      "strong": [
+        "sd_*"
+      ],
+      "weak": []
+    },
+    "uthash": {
+      "strong": [
+        "HASH_*",
+        "UT_*"
+      ],
+      "weak": []
+    },
+    "wolfSSL": {
+      "strong": [
+        "wc_*",
+        "wolfSSL_*",
+        "wolfSSL_CTX_*"
+      ],
+      "weak": []
+    },
+    "yaml-cpp": {
+      "strong": [
+        "YAML::*"
+      ],
+      "weak": []
+    },
+    "zlib": {
+      "strong": [
+        "adler32_combine",
+        "adler32_z",
+        "compress2",
+        "compressBound",
+        "crc32_combine",
+        "crc32_z",
+        "deflateBound",
+        "deflateInit*",
+        "gzdopen",
+        "gzopen",
+        "inflateInit*",
+        "uncompress",
+        "uncompress2",
+        "z_stream",
+        "zlibVersion"
+      ],
+      "weak": [
+        "crc32",
+        "adler32",
+        "deflate",
+        "inflate",
+        "compress",
+        "deflateEnd",
+        "inflateEnd"
+      ]
+    }
+  },
+  "schema": 1
+}

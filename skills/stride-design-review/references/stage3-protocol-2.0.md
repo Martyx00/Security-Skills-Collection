@@ -1,0 +1,42 @@
+# Stage 3 protocol 2.0 — canonical contract
+
+This is the normative Stage 3 contract, and the one copy of it: the coordinator roles (`roles/orchestrator.md`, `roles/fact-checker.md`) and the verifier role (`roles/verifier.md`) list this file under "Read first" and do not repeat it. `scripts/stride_run.py` implements the queue, ledger and recovery rules below (`freeze`, `verify-request`, `verify-record`), and `scripts/validate_run.py` checks every one of them.
+
+## Queue construction and limits
+
+Recompute and match the corpus digest first. Reconcile all `S1-*`, `S2-*`, and pre-freeze `S3-*` records. Accepted Stage 1/2 reports have unique valid IDs and exact active-register columns defined by their prompts. Project each Stage 1 row, then each Stage 2 row, without paraphrase: retain its ID; set occurrence to its one-based active-row occurrence; set locator to `<register heading>::row=<row>::id=<ID>::occurrence=<occurrence>`; set claim from the exact Claim cell; set scope from the ordered `Affected Scope`, `Threat Actors`, and `STRIDE` JSON arrays; and resolve ordered Evidence IDs to source locators and exact quotes. Hash the canonical blinded record with `digest.py canonical <file> --select <path>`; never assert a digest by inspection. `digest.py stage3 <runRoot> --check` recomputes every `issueRecordDigest` and `sourceCandidateDigest` beside its recorded value, and `digest.py file`/`digest.py schemas` produce the artifact and schema digests the manifest requires. The validator requires an exact one-to-one projection from the immutable manifest-bound reports; missing, invented, reordered, or altered base items fail closed.
+
+A fresh `sweep` role (`roles/sweep.md`) receives only the corpus/model inputs and returns candidate JSON before freeze. Its cap is `min(15, max(1, ceil(0.20 × (|S1| + |S2|))))`. Each candidate carries `uncoveredInteraction`. Rank candidates by: `uncoveredInteraction=true` first; then impact cell `Critical, High, Medium, Low, Undetermined`; then non-null domain-lens question ID in Unicode-code-point order with null last; then the Unicode-code-point minimum evidence `(relativePath, locator)`; then claim; then canonical candidate JSON excluding `candidateId` as the total tie-breaker. Candidate IDs are exactly `S3-CANDIDATE-001`, `-002`, ... by rank, and the coordinator allocates matching `S3-001`, `S3-002`, ... before freeze. Do not add later discoveries.
+
+`maxQueueSize` defaults to 100 and may be 1–500. Overflow fails closed; never truncate. Estimated delegated calls are `N` minimum and `2N` maximum, plus at most `N` inline fallbacks. Publish these bounds before dispatch.
+
+Queue order is Stage 1, Stage 2, Stage 3; then numeric suffix; then exact ID byte order; then source-record occurrence. Valid IDs are `S[123]-[0-9]{3,}`. Malformed/duplicate IDs retain their original value and receive injective UTF-8-hex queue keys. Each Stage 3 item is bound one-to-one to a unique sweep candidate digest; its blinded record is the canonical projection of candidate claim, affected scope/actors/STRIDE, and ordered evidence locators/quotes. Freeze `stage-3/issue-index.json` before dispatch.
+
+## One canonical ledger and recovery
+
+Both coordinators use `<runRoot>/stage-3/verification-ledger.json`; `run-manifest.json` references its digest and summary but never stores a second queue state machine. Ledger states are `pending | attempt-1-invoked | attempt-1-rejected | attempt-2-invoked | accepted | inline | terminal`. Persist requests and raw results under `stage-3/verifications/<queueKey>/attempt-N-{request,result}.json` before changing state. An inline result is immutable only after its `inlineResultSha256` is persisted and reconciled.
+
+Resume is permitted when schemas, package/protocol versions, envelope, corpus digest, index digest, and accepted artifact digests match. Reconcile the ledger, issue index, requests, results, and state transition history. Never silently re-dispatch an attempt whose invocation was durably recorded. If an invocation is interrupted with no result, preserve `resultPath`/`resultSha256` as null, journal its outcome as `rejected` with `defectCode: transient execution` and a non-empty defect, then proceed to the next allowed attempt; an interrupted attempt 2 terminates or uses explicitly enabled inline fallback.
+
+The fallback ladder is:
+
+1. Dispatch attempt 1 to a fresh read-only verifier.
+2. For transient timeout/context failure, malformed/schema-invalid result, or `Blocked — invalid invocation`, journal the exact defect and dispatch one corrected attempt 2 to a new verifier. Invalid invocation correction may change only invocation shape, not issue substance.
+3. `Blocked — unreadable source` or a second rejected result is terminal unless the envelope explicitly sets `verificationFallback: inline`; then the coordinator may verify inline, record reduced independence, and persist a schema-valid result. Corpus or artifact digest mismatch is always terminal and requires a fresh manifest/index; inline fallback is forbidden.
+4. Otherwise fail closed. No third delegated attempt.
+
+Stage 1/2 child artifacts follow the same distinction: input/config/digest blockers are terminal; a child-produced schema-invalid artifact may be regenerated once with the exact machine-validation diff, journaled as generation 2.
+
+## Adjudication
+
+Worker verdicts inform but do not bind the coordinator. MI verdicts are exactly `Confirmed missing | Present | Partially present | Unsupported premise | Duplicate`. Merge only records with the same root cause **and** remediation **and** affected scope. Assign primary STRIDE by the earliest applicable category in `Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege`; retain all categories. Assign final IDs deterministically after merge.
+
+Record which model and reasoning effort served each attempt in the optional `model`/`effort` fields of the request and ledger attempt, and an inline fallback in the entry's `inlineModel`/`inlineEffort`. Attempt 1 must attest `environment.verifierModel`, and an inline fallback must attest `environment.coordinatorModel`, because it executes in the coordinator's own context. Optional blinded mode sends claim, scope, and source locators/quotes but withholds prior verdict, severity, confidence, and proposed disposition. Publish per-stage confirmed, corrected/partial, false-positive, unverifiable, and blocked rates in §6.1.
+
+## Verifier result contract (schema `verifier-result-1.0`)
+
+Return one JSON object with exactly these top-level keys: `schemaVersion`, `protocolVersion`, `queueKey`, `issueId`, `origin`, `attempt`, `verdict`, `blockedCause`, `citationIntegrity`, `correctedClaim`, `stride`, `scope`, `supportingEvidence`, `contradictingEvidence`, `documentedControls`, `severity`, `confidence`, `dispositionRecommendation`, `missingInformation`, `verificationDefects`.
+
+Closed values: `origin = stage1 | stage2 | stage3`; `verdict = Confirmed | Partially confirmed | False positive | Unverifiable | Blocked`; `blockedCause = null | invalid invocation | unreadable source | digest mismatch | transient execution`; `citationIntegrity = Valid | Wrong locator | Overstated | Not found | No citation | Mixed`; STRIDE uses the six canonical categories; severity base/ceiling use `Critical | High | Medium | Low | Undetermined`; confidence is `High | Medium | Low`; control effect is `Eliminates | Reduces | Does not address | Undetermined`.
+
+Every evidence object has exactly `documentTitle`, `relativePath`, `locator`, `quote`, and `proposition`; `quote` is exact and at most 25 words. Every `documentedControls` entry has exactly `controlReference` (the control's ID in the reports, or `null` when no report registers it; the key is required either way), `documentTitle`, `relativePath`, `locator`, `quote`, `mechanism`, `applicability`, and `effect`. `Confirmed`/`Partially confirmed` require support; `False positive` requires contradiction; `Unverifiable` requires missing information; `Blocked` requires a non-null cause and defect. Non-blocked results use `blockedCause: null`. Severity `base` and `rubricCell` are exact pairs: `Critical/SR-Critical | High/SR-High | Medium/SR-Medium | Low/SR-Low | Undetermined/SR-Undetermined`; the machine validator rejects a contradictory pair. Confidence is evidence quality, never likelihood. The JSON Schema is authoritative for nested keys and cross-field shape.

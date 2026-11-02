@@ -1,0 +1,17 @@
+# Read by ripgrep, and by the search tools of hosts that are built on it, in whatever tree
+# holds this skill folder. A project install puts the skill inside the repository being
+# triaged (<repository>/.claude/skills/report-triage, <repository>/.agents/skills/...),
+# and a search of that repository would return lines from it. Measured with the skills
+# then installed for two hosts: a hidden-aware search for a C library function returned
+# 12 files of this skill and 44 of the skills together, against 1 of the product.
+#
+# This hides nothing from a person or from a model that opens a file by its path. It keeps
+# the skill's own text, which carries the vocabulary of the report being checked, out of
+# searches of the code under review:
+#   references/   the contract, the role files, the limits
+#   scripts/      the tools, whose source holds the probe's word lists, and the self-test
+# SKILL.md stays visible. The patterns are anchored to the skill folder, so a `scripts/` of
+# the repository under review is still searched.
+# To search the skill itself, ask for it: rg --no-ignore PATTERN <skill folder>.
+/references/
+/scripts/

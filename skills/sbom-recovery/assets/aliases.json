@@ -1,0 +1,459 @@
+{
+  "alias": {
+    "ARM C library": "Arm C library",
+    "ARM CMSIS": "CMSIS",
+    "ARM MicroLIB": "Arm C library",
+    "ARMv8-M MPU driver": "Arm mpu_armv8m_drv",
+    "ASF3": "Microchip ASF3",
+    "ASF4": "Microchip ASF4",
+    "AWS FreeRTOS": "amazon-freertos",
+    "AWS IoT Over-the-air Update": "AWS IoT OTA",
+    "AWS OTA library": "AWS IoT OTA",
+    "AWS coreMQTT": "coreMQTT",
+    "Amazon FreeRTOS common libraries": "amazon-freertos",
+    "Amazon Web Services FreeRTOS": "amazon-freertos",
+    "Ameba1 SDK": "Realtek Ameba1 SDK",
+    "AmebaD SDK": "Realtek AmebaD SDK",
+    "AmebaDplus SDK": "Realtek AmebaD SDK",
+    "Arm CMSIS": "CMSIS",
+    "Arm Compiler 5": "Arm Compiler",
+    "Arm Compiler 6": "Arm Compiler",
+    "Arm Compiler for Embedded": "Arm Compiler",
+    "Arm Mbed OS": "Mbed OS",
+    "Arm MicroLIB": "Arm C library",
+    "Arm Trusted Firmware-M": "Trusted Firmware-M",
+    "Arm standard C library": "Arm C library",
+    "Atmel ASF3": "Microchip ASF3",
+    "Atmel ASF4": "Microchip ASF4",
+    "Azure RTOS FileX": "FileX",
+    "Azure RTOS NetX Duo": "NetX Duo",
+    "Azure RTOS ThreadX": "Eclipse ThreadX",
+    "Azure RTOS USBX": "USBX",
+    "CMOX": "STM32 Cryptographic Library",
+    "CMSIS RTOS2": "CMSIS-RTOS2",
+    "CMSIS-RTOS": "CMSIS-RTOS2",
+    "CMSIS-RTOS v1": "CMSIS-RTOS2",
+    "CMSIS-RTOS2 RTX": "CMSIS-RTX",
+    "CMSIS-RTOS2 RTX5": "CMSIS-RTX",
+    "CMSIS-RTX5": "CMSIS-RTX",
+    "CMSIS_5": "CMSIS",
+    "CMSIS_6": "CMSIS",
+    "Cesanta Mongoose": "Mongoose",
+    "ChaN FatFs": "FatFs",
+    "Contiki uIP": "uIP",
+    "CyaSSL": "wolfSSL",
+    "DLIB": "IAR DLIB",
+    "DLib": "IAR DLIB",
+    "DaveGamble cJSON": "cJSON",
+    "ESnet iperf3": "iperf3",
+    "Eclipse ThreadX FileX": "FileX",
+    "Eclipse ThreadX NetX Duo": "NetX Duo",
+    "Eclipse ThreadX USBX": "USBX",
+    "Elm-ChaN FatFs": "FatFs",
+    "Espressif IoT Development Framework": "ESP-IDF",
+    "Express Logic ThreadX": "Eclipse ThreadX",
+    "FatFs (ChaN)": "FatFs",
+    "FreeRTOS": "FreeRTOS-Kernel",
+    "FreeRTOS+FAT": "FreeRTOS-Plus-FAT",
+    "GNU Arm Embedded Toolchain": "Arm GNU Toolchain",
+    "GNU Arm Toolchain": "Arm GNU Toolchain",
+    "GNU Toolchain for Arm": "Arm GNU Toolchain",
+    "GSDK": "Silicon Labs Gecko SDK",
+    "GTest": "googletest",
+    "Gecko Platform": "Silicon Labs Gecko SDK",
+    "Gecko SDK": "Silicon Labs Gecko SDK",
+    "Gecko Software Development Kit": "Silicon Labs Gecko SDK",
+    "Google Test": "googletest",
+    "IAR C/C++ runtime": "IAR DLIB",
+    "IAR Embedded Workbench runtime library": "IAR DLIB",
+    "Intel TinyCBOR": "tinycbor",
+    "Intel TinyCrypt": "TinyCrypt",
+    "Keil ARM Compiler": "Arm Compiler",
+    "Keil RTX5": "CMSIS-RTX",
+    "Light and Versatile Graphics Library": "LVGL",
+    "LittlevGL": "LVGL",
+    "MQTTPacket": "Eclipse Paho MQTT embedded-C",
+    "MicroLIB": "Arm C library",
+    "Mongoose Embedded Web Server Library": "Mongoose",
+    "NaCl libsodium": "libsodium",
+    "Newlib (nano)": "newlib",
+    "Nordic nRF5 SDK": "nRF5 SDK",
+    "Oryx CycloneTCP": "CycloneTCP",
+    "Paho MQTT C/C++ client for Embedded platforms": "Eclipse Paho MQTT embedded-C",
+    "Paho MQTT Embedded C": "Eclipse Paho MQTT embedded-C",
+    "Paho embedded-C": "Eclipse Paho MQTT embedded-C",
+    "RTX5": "CMSIS-RTX",
+    "Realtek Ameba SDK": "Realtek AmebaD SDK",
+    "SDL": "SDL2",
+    "SEGGER embOS": "embOS",
+    "ST USB Device Library": "STM32 USB Device Library",
+    "ST USB Host Library": "STM32 USB Host Library",
+    "STM32 HAL drivers": "STM32 HAL Driver",
+    "STM32 TSL": "STM32 TouchSensing Library",
+    "STM32 USBPD": "STM32 USB Power Delivery library",
+    "STM32 cryptographic firmware library": "STM32 Cryptographic Library",
+    "STM32 cryptolib": "STM32 Cryptographic Library",
+    "STM32Cube MCU & MPU Packages": "STM32Cube MCU Packages",
+    "STM32Cube Middleware": "STM32Cube MCU Packages",
+    "STM32Cube firmware package": "STM32Cube MCU Packages",
+    "STM32Cube firmware packages": "STM32Cube MCU Packages",
+    "STM32CubeG0 firmware package": "STM32CubeG0",
+    "STM32CubeL4 Firmware": "STM32CubeL4",
+    "STM32CubeL4 firmware package": "STM32CubeL4",
+    "STM32CubeU3 firmware package": "STM32CubeU3",
+    "STM32CubeU5 firmware package": "STM32CubeU5",
+    "STM32Cube_FW_G0": "STM32CubeG0",
+    "STM32Cube_FW_L4": "STM32CubeL4",
+    "STM32Cube_FW_U3": "STM32CubeU3",
+    "STM32Cube_FW_U5": "STM32CubeU5",
+    "STMems Standard C drivers": "ST MEMS sensor drivers",
+    "STMems_Standard_C_drivers": "ST MEMS sensor drivers",
+    "STemWin": "Segger emWin",
+    "TF-M": "Trusted Firmware-M",
+    "TFM": "Trusted Firmware-M",
+    "ThreadX": "Eclipse ThreadX",
+    "TouchSensing": "STM32 TouchSensing Library",
+    "USB-PD core": "STM32 USB Power Delivery library",
+    "USBPD": "STM32 USB Power Delivery library",
+    "USBPD core": "STM32 USB Power Delivery library",
+    "WITTENSTEIN SafeRTOS": "SafeRTOS",
+    "X-CUBE-CRYPTOLIB": "STM32 Cryptographic Library",
+    "X-CUBE-TOUCHGFX": "TouchGFX",
+    "Zephyr Project": "Zephyr",
+    "Zephyr RTOS": "Zephyr",
+    "amb1_sdk": "Realtek Ameba1 SDK",
+    "arm-none-eabi-gcc": "Arm GNU Toolchain",
+    "armcc": "Arm Compiler",
+    "armclang": "Arm Compiler",
+    "armlib": "Arm C library",
+    "bz2": "bzip2",
+    "cares": "c-ares",
+    "dbus": "D-Bus",
+    "dbus-1": "D-Bus",
+    "emWin": "Segger emWin",
+    "esnet iperf": "iperf3",
+    "fmtlib": "fmt",
+    "freetype2": "FreeType",
+    "gcc-arm-none-eabi": "Arm GNU Toolchain",
+    "gecko_sdk": "Silicon Labs Gecko SDK",
+    "gif": "GIFLIB",
+    "giflib": "GIFLIB",
+    "glib-2.0": "GLib",
+    "gmock": "googletest",
+    "googlemock": "googletest",
+    "grpc++": "gRPC",
+    "gtest": "googletest",
+    "hostap wpa_supplicant": "wpa_supplicant",
+    "jpeg": "IJG libjpeg",
+    "kmackay micro-ecc": "micro-ecc",
+    "libavcodec": "FFmpeg",
+    "libavformat": "FFmpeg",
+    "libavutil": "FFmpeg",
+    "libbz2": "bzip2",
+    "libc_nano": "newlib",
+    "libcares": "c-ares",
+    "libcrypto": "OpenSSL",
+    "libcurl": "curl",
+    "libdbus": "D-Bus",
+    "libexpat": "Expat",
+    "libfmt": "fmt",
+    "libgcc.a": "libgcc",
+    "libgcc_s": "libgcc",
+    "libjpeg": "IJG libjpeg",
+    "liblua": "Lua",
+    "liblz4": "LZ4",
+    "liblzma": "XZ Utils",
+    "libnghttp2": "nghttp2",
+    "libpcre": "PCRE",
+    "libpcre2": "PCRE2",
+    "libpng16": "libpng",
+    "libprotobuf": "Protocol Buffers",
+    "libprotobuf-c": "protobuf-c",
+    "libsdl2": "SDL2",
+    "libsqlite3": "SQLite",
+    "libssl": "OpenSSL",
+    "libstdc++.a": "libstdc++",
+    "libsupc++": "libstdc++",
+    "libsystemd": "systemd",
+    "libtiff": "LibTIFF",
+    "libusb-1.0": "libusb",
+    "libyaml": "LibYAML",
+    "libz": "zlib",
+    "libzstd": "Zstandard",
+    "lightweight IP": "lwIP",
+    "lightweight ring buffer": "lwrb",
+    "lzma": "XZ Utils",
+    "madler zlib": "zlib",
+    "micro IP": "uIP",
+    "mongoose web server": "Mongoose",
+    "mpu_armv8m_drv": "Arm mpu_armv8m_drv",
+    "newlib libc": "newlib",
+    "newlib nano": "newlib",
+    "newlib-nano": "newlib",
+    "nlohmann json": "nlohmann/json",
+    "nlohmann_json": "nlohmann/json",
+    "ota-for-aws": "AWS IoT OTA",
+    "ota-for-aws-iot-embedded-sdk": "AWS IoT OTA",
+    "paho.mqtt.embedded-c": "Eclipse Paho MQTT embedded-C",
+    "pcre2-8": "PCRE2",
+    "png": "libpng",
+    "protobuf": "Protocol Buffers",
+    "rapidjson": "RapidJSON",
+    "sodium": "libsodium",
+    "sqlite": "SQLite",
+    "sqlite3": "SQLite",
+    "stm32_mw_touchsensing": "STM32 TouchSensing Library",
+    "stm32_mw_usb_device": "STM32 USB Device Library",
+    "stm32_mw_usb_host": "STM32 USB Host Library",
+    "stm32_mw_usbpd_core": "STM32 USB Power Delivery library",
+    "tiff": "LibTIFF",
+    "tinyxml": "TinyXML",
+    "tinyxml2": "TinyXML-2",
+    "turbojpeg": "libjpeg-turbo",
+    "uECC": "micro-ecc",
+    "uecc": "micro-ecc",
+    "webp": "libwebp",
+    "wolfCrypt": "wolfSSL",
+    "xdk-asf": "Microchip ASF3",
+    "xz": "XZ Utils",
+    "yaml-0.1": "LibYAML",
+    "zephyr-rtos": "Zephyr",
+    "zstd": "Zstandard"
+  },
+  "covers": [
+    {
+      "entry": "AWS IoT OTA",
+      "pattern": "AWS IoT OTA *"
+    },
+    {
+      "entry": "AWS IoT OTA",
+      "pattern": "ota-for-aws *"
+    },
+    {
+      "entry": "Arm mpu_armv8m_drv",
+      "pattern": "*MPU Armv8*M driver*"
+    },
+    {
+      "entry": "Arm mpu_armv8m_drv",
+      "pattern": "*mpu_armv8m_drv*"
+    },
+    {
+      "entry": "CMSIS",
+      "pattern": "ARM CMSIS *"
+    },
+    {
+      "entry": "CMSIS",
+      "pattern": "ARM CMSIS-*"
+    },
+    {
+      "entry": "CMSIS",
+      "pattern": "Arm CMSIS *"
+    },
+    {
+      "entry": "CMSIS",
+      "pattern": "Arm CMSIS-*"
+    },
+    {
+      "entry": "CMSIS",
+      "pattern": "CMSIS *"
+    },
+    {
+      "entry": "CMSIS",
+      "pattern": "CMSIS-*"
+    },
+    {
+      "entry": "CMSIS-RTX",
+      "pattern": "Keil RTX*"
+    },
+    {
+      "entry": "Eclipse Paho MQTT embedded-C",
+      "pattern": "*MQTTClient-C*"
+    },
+    {
+      "entry": "Eclipse Paho MQTT embedded-C",
+      "pattern": "Paho*embedded*"
+    },
+    {
+      "entry": "FatFs",
+      "pattern": "FatFs *"
+    },
+    {
+      "entry": "FreeRTOS-Kernel",
+      "pattern": "FreeRTOS *kernel*"
+    },
+    {
+      "entry": "FreeRTOS-Kernel",
+      "pattern": "FreeRTOS kernel *"
+    },
+    {
+      "entry": "MCUboot",
+      "pattern": "MCUboot *"
+    },
+    {
+      "entry": "Micrium uC/OS",
+      "pattern": "uC-OS*"
+    },
+    {
+      "entry": "Micrium uC/OS",
+      "pattern": "uC/OS*"
+    },
+    {
+      "entry": "Micrium uC/OS",
+      "pattern": "uCOS*"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "Ameba-D SDK*"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "AmebaD SDK*"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "AmebaDplus SDK*"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "Realtek Ameba-D*"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "Realtek AmebaD*"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "ambd_sdk"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "ameba-rtos"
+    },
+    {
+      "entry": "Realtek AmebaD SDK",
+      "pattern": "ameba-rtos-d"
+    },
+    {
+      "entry": "SEGGER RTT",
+      "pattern": "SEGGER SystemView"
+    },
+    {
+      "entry": "SEGGER RTT",
+      "pattern": "SEGGER_SYSVIEW*"
+    },
+    {
+      "entry": "SEGGER RTT",
+      "pattern": "SystemView"
+    },
+    {
+      "entry": "ST MEMS sensor drivers",
+      "pattern": "*lis2dux12*"
+    },
+    {
+      "entry": "ST MEMS sensor drivers",
+      "pattern": "LIS2* driver*"
+    },
+    {
+      "entry": "ST MEMS sensor drivers",
+      "pattern": "LSM* driver*"
+    },
+    {
+      "entry": "ST MEMS sensor drivers",
+      "pattern": "ST * sensor driver*"
+    },
+    {
+      "entry": "ST MEMS sensor drivers",
+      "pattern": "X-CUBE-MEMS*"
+    },
+    {
+      "entry": "STM32 HAL Driver",
+      "pattern": "STM32 HAL*"
+    },
+    {
+      "entry": "STM32 HAL Driver",
+      "pattern": "STM32*xx HAL Driver"
+    },
+    {
+      "entry": "STM32 HAL Driver",
+      "pattern": "STM32*xx HAL*"
+    },
+    {
+      "entry": "STM32 HAL Driver",
+      "pattern": "STM32*xx LL Driver*"
+    },
+    {
+      "entry": "STM32 HAL Driver",
+      "pattern": "STM32*xx_HAL_Driver"
+    },
+    {
+      "entry": "STM32 HAL Driver",
+      "pattern": "STM32Cube HAL"
+    },
+    {
+      "entry": "STM32 TouchSensing Library",
+      "pattern": "*stm32-touchsensing*"
+    },
+    {
+      "entry": "STM32 TouchSensing Library",
+      "pattern": "ST TouchSensing*"
+    },
+    {
+      "entry": "STM32 USB Device Library",
+      "pattern": "STM32 USB Device Library *"
+    },
+    {
+      "entry": "STM32 USB Device Library",
+      "pattern": "STM32_USB_Device_Library *"
+    },
+    {
+      "entry": "amazon-freertos",
+      "pattern": "Amazon FreeRTOS *"
+    },
+    {
+      "entry": "amazon-freertos",
+      "pattern": "amazon-freertos *"
+    },
+    {
+      "entry": "cJSON",
+      "pattern": "cJSON *"
+    },
+    {
+      "entry": "libgcc",
+      "pattern": "GCC"
+    },
+    {
+      "entry": "libgcc",
+      "pattern": "GNU Compiler Collection"
+    },
+    {
+      "entry": "libgcc",
+      "pattern": "GNU GCC"
+    },
+    {
+      "entry": "littlefs",
+      "pattern": "littlefs *"
+    },
+    {
+      "entry": "lwIP",
+      "pattern": "lwIP *"
+    },
+    {
+      "entry": "mbed TLS",
+      "pattern": "mbed TLS *"
+    },
+    {
+      "entry": "mbed TLS",
+      "pattern": "mbedTLS *"
+    },
+    {
+      "entry": "nanopb",
+      "pattern": "nanopb *"
+    },
+    {
+      "entry": "wpa_supplicant",
+      "pattern": "wpa_supplicant *"
+    }
+  ],
+  "known_unmapped": [],
+  "schema": 1
+}

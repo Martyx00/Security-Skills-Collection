@@ -1,0 +1,178 @@
+{
+  "title": "STRIDE verifier request 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "protocolVersion",
+    "queueKey",
+    "issueId",
+    "origin",
+    "attempt",
+    "docsRoot",
+    "corpusManifest",
+    "corpusDigest",
+    "verificationMode",
+    "issueRecord"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "protocolVersion": {
+      "const": "2.0"
+    },
+    "queueKey": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issueId": {
+      "type": "string"
+    },
+    "origin": {
+      "enum": [
+        "stage1",
+        "stage2",
+        "stage3"
+      ]
+    },
+    "attempt": {
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "docsRoot": {
+      "type": "string",
+      "minLength": 1
+    },
+    "corpusManifest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "corpusDigest": {
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "verificationMode": {
+      "enum": [
+        "standard",
+        "blinded"
+      ]
+    },
+    "issueRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim",
+        "scope",
+        "sourceLocators",
+        "sourceQuotes"
+      ],
+      "properties": {
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "affectedScope",
+            "threatActors",
+            "stride"
+          ],
+          "properties": {
+            "affectedScope": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "threatActors": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "stride": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "Spoofing",
+                  "Tampering",
+                  "Repudiation",
+                  "Information Disclosure",
+                  "Denial of Service",
+                  "Elevation of Privilege"
+                ]
+              }
+            }
+          }
+        },
+        "sourceLocators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sourceQuotes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "relativePath",
+              "locator",
+              "quote"
+            ],
+            "properties": {
+              "relativePath": {
+                "type": "string",
+                "minLength": 1
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "effort": {
+      "enum": [
+        null,
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "unspecified"
+      ]
+    }
+  }
+}

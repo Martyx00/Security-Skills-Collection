@@ -1,0 +1,3553 @@
+{
+  "entries": [
+    {
+      "header_only": false,
+      "name": "amazon-freertos",
+      "notes": "[as of 2026-10-07] Versions 1.0.0 to 1.4.9, then date-style releases 201908.00 to 202012.00. a:amazon:amazon_freertos is fully deprecated (no CVEs). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "amazon_web_services_freertos",
+          "role": "primary",
+          "vendor": "amazon",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "amazon_freertos",
+          "role": "never_emit",
+          "vendor": "amazon",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 31,
+        "nvd_cve_count": 14,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Arm C library",
+      "notes": "[as of 2026-10-07] Runtime library of Arm Compiler (standard or MicroLIB). NVD's arm_compiler CVEs concern the compiler and its installer, not this library. [from the NVD API 2.0 data of 2026-10-07; curated]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Arm Compiler",
+      "notes": "[as of 2026-10-07] Versions 5.06 with 'update7' in the update field (cpe:2.3:a:arm:arm_compiler:5.06:update7), and 6.14.1. 'Arm Compiler for Embedded' covers 6.17 to 6.23. MicroLIB has no CPE; it ships with Arm Compiler. CVE-2024-7883 (CMSE stack leak) is only on the for_embedded variants. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "arm_compiler",
+          "role": "primary",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "arm_compiler_for_embedded",
+          "role": "also_emit",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "arm_compiler_for_embedded_fusa",
+          "role": "also_emit",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "arm_compiler_for_functional_safety",
+          "role": "also_emit",
+          "vendor": "arm",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 42,
+        "nvd_cve_count": 3,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Arm GNU Toolchain",
+      "notes": "[as of 2026-10-07] A single CPE with version '-'. Its only CVE is CVE-2022-43701 (installation-directory permissions). For compiler bugs use a:gnu:gcc, and for the bundled libc use newlib. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "gnu_toolchain",
+          "role": "primary",
+          "vendor": "arm",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 1,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Arm mpu_armv8m_drv",
+      "notes": "[as of 2026-10-07] This driver comes from TF-M platform code. Matches for 'armv8-m' are only the h:arm:armv8-m / o:arm:armv8-m_firmware architecture CPEs, which are a different thing. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "AWS IoT OTA",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "backoffAlgorithm",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "BearSSL",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Boost",
+      "notes": "[as of 2026-10-09] boost:boost is the umbrella product (per-library products such as boost:pool also exist), so the pair is withheld to the alternatives.",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "boost",
+          "role": "primary",
+          "vendor": "boost",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "boost-{version}",
+        "url": "https://github.com/boostorg/boost"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "bzip2",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "bzip2",
+          "role": "primary",
+          "vendor": "bzip",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "c-ares",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "c-ares",
+          "role": "primary",
+          "vendor": "c-ares",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": null,
+        "url": "https://github.com/c-ares/c-ares"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "cJSON",
+      "notes": "[as of 2026-10-07] Plain semver without 'v', from 0.0.0 and 1.0.0 through 1.7.19 (all 1.x releases present). a:cjson_project:cjson has 1.0.0-1.7.18, of which 48 are deprecated to davegamble; its one remaining active name is '2016-10-02'. Its 3 CVEs (CVE-2023-26819, CVE-2023-53154, CVE-2024-31755) are configured only on cjson_project, so query both names. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "cjson",
+          "role": "primary",
+          "vendor": "davegamble",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "cjson",
+          "role": "also_emit",
+          "vendor": "cjson_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 49,
+        "nvd_cve_count": 14,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b; pairs per report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/DaveGamble/cJSON"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "CMSIS",
+      "notes": "[as of 2026-10-07] Only CMSIS-RTOS2 has a CPE (o:arm:cmsis-rtos, see its own entry). CMSIS-Core, CMSIS-DSP and CMSIS-Driver have none. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "CMSIS-RTOS2",
+      "notes": "[as of 2026-10-07] The CMSIS-RTOS(2) API and vendor wrappers over other kernels (cmsis_os2.c / cmsis_os.c over FreeRTOS). Arm's RTX implementation is the separate mapped row 'CMSIS-RTX'. [from the NVD API 2.0 data of 2026-10-07; curated]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "CMSIS-RTX",
+      "notes": "[as of 2026-10-07] Arm's RTX kernel (CMSIS-RTOS2 implementation). NVD versions are the CMSIS-RTOS2 API version (cmsis_os2.h '$Revision V2.x'), not the RTX 5.x kernel version: give the API version when the tree states it. part is 'o'. Only versions 2.0.0, 2.1.0, 2.1.1, 2.1.2, 2.1.3 exist. The only CVE is CVE-2021-27431 (BadAlloc in osRtxMemoryAlloc, RTX5). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "o",
+          "product": "cmsis-rtos",
+          "role": "primary",
+          "vendor": "arm",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 5,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "coreHTTP",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/FreeRTOS/coreHTTP"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "coreJSON",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/FreeRTOS/coreJSON"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "coreMQTT",
+      "notes": "[as of 2026-10-07] CVE-ONLY name: no CPE-dictionary entry exists (cpeMatchString -> 0). It appears only as the match criterion of CVE-2026-8686 (cpe:2.3:a:freertos:coremqtt:5.0.0, fixed in 5.0.1). Versions are plain semver without 'v' (5.0.0). The vendor is 'freertos', not 'amazon'. Match with virtualMatchString=cpe:2.3:a:freertos:coremqtt. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "coremqtt",
+          "role": "cve_only",
+          "vendor": "freertos",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/FreeRTOS/coreMQTT"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "coreMQTT-Agent",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "corePKCS11",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "curl",
+      "notes": "[as of 2026-10-09] NVD lists library CVEs under haxx:curl, haxx:libcurl or both; all 2026 CVEs are on haxx:curl only and libcurl is kept for 39 legacy CVEs (curl 169, libcurl 61, both 22 in the fkie-cad snapshot).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "curl",
+          "role": "primary",
+          "vendor": "haxx",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "libcurl",
+          "role": "also_emit",
+          "vendor": "haxx",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": 208,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "curl-{version_underscored}",
+        "url": "https://github.com/curl/curl"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "CycloneTCP",
+      "notes": "[as of 2026-10-07] Versions 1.7.6 to 2.0.4. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "cyclonetcp",
+          "role": "primary",
+          "vendor": "oryx-embedded",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 13,
+        "nvd_cve_count": 2,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "D-Bus",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "dbus",
+          "role": "primary",
+          "vendor": "freedesktop",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Eclipse Paho MQTT embedded-C",
+      "notes": "[as of 2026-10-07] The product name has escaped characters: paho_mqtt_c\\/c\\+\\+_client (URL-encode the backslashes). Only versions 1.0.0 and 1.1.0 exist. The CPE references github.com/eclipse/paho.mqtt.embedded-c, and CVE-2021-41036 (versionEndExcluding 1.1.0) cites paho.mqtt.embedded-c issue 96, so this is the embedded-C client, not paho.mqtt.c. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "paho_mqtt_c\\/c\\+\\+_client",
+          "role": "primary",
+          "vendor": "eclipse",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 2,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/eclipse/paho.mqtt.embedded-c"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Eclipse ThreadX",
+      "notes": "[as of 2026-10-07] Eclipse names use versions 6.0 to 6.4.2, then date-suffixed builds (6.4.3.202503, 6.5.0.202601). The Microsoft name (part 'o') covers 6.0 to 6.3.0. The two products have different CVEs, so query both. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "threadx",
+          "role": "primary",
+          "vendor": "eclipse",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "azure_rtos_threadx",
+          "role": "also_emit",
+          "vendor": "microsoft",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 28,
+        "nvd_cve_count": 6,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}_rel",
+        "url": "https://github.com/eclipse-threadx/threadx"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "embOS",
+      "notes": "[as of 2026-10-07] The only embOS-like CPE is a:segger:embos\\/ip_ftp_server ('SEGGER FTP Server for Windows', CVE-2018-7449), which is a different product. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "ESP-IDF",
+      "notes": "[as of 2026-10-07] Versions like 5.1.2 and 6.0.1, with beta/rc/dev in the update field (5.5:rc1). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "esp-idf",
+          "role": "primary",
+          "vendor": "espressif",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 173,
+        "nvd_cve_count": 31,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/espressif/esp-idf"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Expat",
+      "notes": "[as of 2026-10-09] vendor libexpat_project, product libexpat (not expat). Recent CVEs are Deferred without CPE configuration.",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libexpat",
+          "role": "primary",
+          "vendor": "libexpat_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "R_{major}_{minor}_{patch}",
+        "url": "https://github.com/libexpat/libexpat"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "eyalroz printf",
+      "notes": "[as of 2026-10-07] Fork of mpaland printf with its own 5.x/6.x releases. [from the NVD API 2.0 data of 2026-10-07; curated]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "FatFs",
+      "notes": "[as of 2026-10-07] Versions use a lowercase 'r' prefix: r0.07a to r0.16, e.g. r0.15b. The source header spells it 'R0.15', so lowercase it. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "fatfs",
+          "role": "primary",
+          "vendor": "elm-chan",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 30,
+        "nvd_cve_count": 6,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "FFmpeg",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "ffmpeg",
+          "role": "primary",
+          "vendor": "ffmpeg",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "n{version}",
+        "url": "https://github.com/FFmpeg/FFmpeg"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "FileX",
+      "notes": "[as of 2026-10-07] Tie at 1 CVE each, with different CVEs. The Eclipse name has 6.4.1 and 6.4.2.202503 onward. The Microsoft name (part 'o') has 6.0 to 6.2.0. Query both. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "threadx_filex",
+          "role": "primary",
+          "vendor": "eclipse",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "azure_rtos_filex",
+          "role": "also_emit",
+          "vendor": "microsoft",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 6,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "fmt",
+      "notes": "[as of 2026-10-09] No analyzed NVD record confirms a vendor:product pair, so the CPE is intentionally empty rather than invented.",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/fmtlib/fmt"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "FreeRTOS-Kernel",
+      "notes": "[as of 2026-10-07] part is 'o'. Plain semver from 1.x to 11.3.1 (10.4.3, 10.6.2, 11.1.0). LTS patches put the patch in the update field and 'lts' in sw_edition (cpe:2.3:o:amazon:freertos:10.4.3:patch1:*:*:lts:*:*:*). From 10.2.0 on, many releases also have a sw_edition '-' variant. 23 legacy names are deprecated: 22 to a:amazon:amazon_web_services_freertos 1.x and 1 to o:amazon:freertos:1.2.2:-. The alternate a:amazon:freertos has NO CPE-dictionary entries. It is only a CVE match criterion (versionEndIncluding 10.0.1) for the 2018 FreeRTOS+TCP bugs (CVE-2018-16523..16527, 16598..16603). Also query it with virtualMatchString for versions <= 10.0.1. The CVE sets of the two names are disjoint. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "o",
+          "product": "freertos",
+          "role": "primary",
+          "vendor": "amazon",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "freertos",
+          "role": "cve_only",
+          "vendor": "amazon",
+          "version_scope": {
+            "max_inclusive": "10.0.1"
+          }
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 158,
+        "nvd_cve_count": 10,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "V{version}",
+        "url": "https://github.com/FreeRTOS/FreeRTOS-Kernel"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "FreeRTOS-Plus-CLI",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "FreeRTOS-Plus-FAT",
+      "notes": "[as of 2026-10-07] NVD versions are date labels such as 160919a (CVE-2019-18178). [from the NVD API 2.0 data of 2026-10-07; curated]",
+      "pairs": [
+        {
+          "part": "o",
+          "product": "freertos\\+fat",
+          "role": "primary",
+          "vendor": "amazon",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 1,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "FreeRTOS-Plus-POSIX",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "FreeRTOS-Plus-TCP",
+      "notes": "[as of 2026-10-07] CPEs only exist for 4.x (4.0.0, 4.1.1, 4.3.3; rc in update field, e.g. 4.0.0:rc1). Older FreeRTOS+TCP bugs (CVE-2018-16523..16603) are configured on a:amazon:amazon_web_services_freertos, not on this product. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "freertos-plus-tcp",
+          "role": "primary",
+          "vendor": "amazon",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 20,
+        "nvd_cve_count": 9,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "V{version}",
+        "url": "https://github.com/FreeRTOS/FreeRTOS-Plus-TCP"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "FreeType",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "freetype",
+          "role": "primary",
+          "vendor": "freetype",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "VER-{major}-{minor}-{patch}",
+        "url": "https://github.com/freetype/freetype"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "GIFLIB",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "giflib",
+          "role": "primary",
+          "vendor": "giflib_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "GLib",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "glib",
+          "role": "primary",
+          "vendor": "gnome",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/GNOME/glib"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "googletest",
+      "notes": "[as of 2026-10-09] No analyzed NVD record confirms a vendor:product pair, so the CPE is intentionally empty rather than invented.",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/google/googletest"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "gRPC",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "grpc",
+          "role": "primary",
+          "vendor": "grpc",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/grpc/grpc"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "HarfBuzz",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "harfbuzz",
+          "role": "primary",
+          "vendor": "harfbuzz_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/harfbuzz/harfbuzz"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "heatshrink",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/atomicobject/heatshrink"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "IAR DLIB",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "IJG libjpeg",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria). Do not merge with libjpeg-turbo (a fork with its own CPE).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libjpeg",
+          "role": "primary",
+          "vendor": "ijg",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "iperf3",
+      "notes": "[as of 2026-10-07] Versions 3.0 to 3.19.1. Pre-releases go in the update field (3.0:beta1, 3.2:rc1, 3.16:beta1). Plain 3.1 and 3.2 are deprecated to 3.1:- and 3.2:-. es:iperf3 also has stray 2.0-2.0.4 names. CVE configs use open-start ranges (<3.14, <3.15, <3.17), so never use this CPE for an iPerf 2 (1.x/2.x) component. a:iperf3_project:iperf3 (42 names, 0 CVEs) is fully deprecated to es:iperf3. a:iperf_project:iperf (28 names, 0 CVEs) is mixed: 3.0.x/3.1.x names are deprecated to iperf3_project:iperf3, but 1.7.0, 2.0.1-2.0.10 and 3.1 are live, so it also covers iPerf 2. iPerf 2 is separate software (a:iperf2_project:iperf2, 8 names, 0 CVEs). Bare 'iperf' is ambiguous and is intentionally not an alias. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "iperf3",
+          "role": "primary",
+          "vendor": "es",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "iperf3",
+          "role": "never_emit",
+          "vendor": "iperf3_project",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "iperf",
+          "role": "never_emit",
+          "vendor": "iperf_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 60,
+        "nvd_cve_count": 8,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/esnet/iperf"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Jansson",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "jansson",
+          "role": "primary",
+          "vendor": "jansson_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/akheron/jansson"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "json-c",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "json-c",
+          "role": "primary",
+          "vendor": "json-c",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": null,
+        "url": "https://github.com/json-c/json-c"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libarchive",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libarchive",
+          "role": "primary",
+          "vendor": "libarchive",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/libarchive/libarchive"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libcoap",
+      "notes": "[as of 2026-10-07] Versions 4.1.1 to 4.3.5b. Letter suffixes go in the version (4.3.4a, 4.3.5a) and rc in the update field (4.3.5:rc1). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libcoap",
+          "role": "primary",
+          "vendor": "libcoap",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 28,
+        "nvd_cve_count": 16,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/obgm/libcoap"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libevent",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libevent",
+          "role": "primary",
+          "vendor": "libevent_project",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "libevent",
+          "role": "also_emit",
+          "vendor": "niels_provos",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "release-{version}-stable",
+        "url": "https://github.com/libevent/libevent"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libgcc",
+      "notes": "[as of 2026-10-07] libgcc is part of GCC; give the GCC version (e.g. 10.3.1) as the version. Many gcc CVEs concern host tools (libiberty) or other back ends. libgcc has no product of its own; it is part of GCC. Versions are inconsistent ('10.2' and '10.2.0' both exist; '12.0'), so use range matching. a:groups_communities_and_co_project:gcc is an unrelated Drupal module. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "gcc",
+          "role": "primary",
+          "vendor": "gnu",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 128,
+        "nvd_cve_count": 14,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": true,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "libjpeg-turbo",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libjpeg-turbo",
+          "role": "primary",
+          "vendor": "libjpeg-turbo",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/libjpeg-turbo/libjpeg-turbo"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libpng",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libpng",
+          "role": "primary",
+          "vendor": "libpng",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/glennrp/libpng"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "LibreSSL",
+      "notes": "[as of 2026-10-09] A fork with its own CPE; never openssl:openssl.",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libressl",
+          "role": "primary",
+          "vendor": "openbsd",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "libsodium",
+      "notes": "[as of 2026-10-07] '*sodium*' matches only bindings (Rust sodiumoxide, Perl Crypt::*Sodium), not libsodium itself. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}-RELEASE",
+        "url": "https://github.com/jedisct1/libsodium"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libssh2",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libssh2",
+          "role": "primary",
+          "vendor": "libssh2",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "libssh2-{version}",
+        "url": "https://github.com/libssh2/libssh2"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libstdc++",
+      "notes": "[as of 2026-10-07] Part of GCC; NVD files libstdc++ issues under a:gnu:gcc. Give the GCC version as the version. [from the NVD API 2.0 data of 2026-10-07; curated]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "gcc",
+          "role": "primary",
+          "vendor": "gnu",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": true,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "LibTIFF",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libtiff",
+          "role": "primary",
+          "vendor": "libtiff",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "libusb",
+      "notes": "[as of 2026-10-09] No analyzed NVD record confirms a vendor:product pair, so the CPE is intentionally empty rather than invented.",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/libusb/libusb"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libuv",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libuv",
+          "role": "primary",
+          "vendor": "libuv",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/libuv/libuv"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libwebp",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libwebp",
+          "role": "primary",
+          "vendor": "webmproject",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/webmproject/libwebp"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libxml2",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libxml2",
+          "role": "primary",
+          "vendor": "xmlsoft",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/GNOME/libxml2"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "libxslt",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libxslt",
+          "role": "primary",
+          "vendor": "xmlsoft",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/GNOME/libxslt"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "LibYAML",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "libyaml",
+          "role": "primary",
+          "vendor": "pyyaml",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/yaml/libyaml"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "littlefs",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/littlefs-project/littlefs"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "llhttp",
+      "notes": "[as of 2026-10-07] target_sw is 'node.js' (cpe:2.3:a:llhttp:llhttp:6.0.6:*:*:*:*:node.js:*:*). Versions 1.0.1 to 6.0.x. Do not constrain target_sw when matching. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "llhttp",
+          "role": "primary",
+          "vendor": "llhttp",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 33,
+        "nvd_cve_count": 6,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "release/v{version}",
+        "url": "https://github.com/nodejs/llhttp"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "LodePNG",
+      "notes": "[as of 2026-10-07] Versions are dates: '2019-09-28', '2022-07-17', and '-'. LodePNG has no semver; map the source date or commit date. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "lodepng",
+          "role": "primary",
+          "vendor": "lodev",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 3,
+        "nvd_cve_count": 2,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Lua",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "lua",
+          "role": "primary",
+          "vendor": "lua",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/lua/lua"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "LuaJIT",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "luajit",
+          "role": "primary",
+          "vendor": "luajit",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": null,
+        "url": "https://github.com/LuaJIT/LuaJIT"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "LVGL",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/lvgl/lvgl"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "lwIP",
+      "notes": "[as of 2026-10-07] CVE-2020-22283 is configured only on version '-' (NA), check manually. Versions 0.2 to 2.1.2 and '-'. There is no 2.1.3 or 2.2.x CPE yet; CVE configs use version ranges. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "lwip",
+          "role": "primary",
+          "vendor": "lwip_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 32,
+        "nvd_cve_count": 3,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "STABLE-{major}_{minor}_{patch}_RELEASE",
+        "url": "https://github.com/lwip-tcpip/lwip"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "lwjson",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "lwrb",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "LZ4",
+      "notes": "[as of 2026-10-07] Versions 1.7.3 to 1.10.0. Not lz4_java, lz4_flex or horde_lz4. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "lz4",
+          "role": "primary",
+          "vendor": "lz4_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 15,
+        "nvd_cve_count": 2,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/lz4/lz4"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Mbed OS",
+      "notes": "[as of 2026-10-07] CVE-2019-17210 (on the alternate o:arm:mbed-os) is configured only on version '-' (NA), check manually. part is 'o'. Versions 5.1.0 to 6.17.0. o:arm:mbed (204 names, rc in the update field) has 6 CVEs, none shared with mbed_os. o:arm:mbed-os ('-' only) has CVE-2019-17210. The three CVE sets are disjoint, so query all three. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "o",
+          "product": "mbed_os",
+          "role": "primary",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "mbed",
+          "role": "also_emit",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "mbed-os",
+          "role": "also_emit",
+          "vendor": "arm",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 117,
+        "nvd_cve_count": 6,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "mbed-os-{version}",
+        "url": "https://github.com/ARMmbed/mbed-os"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "mbed TLS",
+      "notes": "[as of 2026-10-07] A genuine ARMmbed/mbed-crypto release (0.1.0-3.1.0) is a:arm:mbed_crypto with its own version line - check it by hand. Versions like 2.28.0, 3.6.2, 4.0.0; rc/beta in update field (2.1.10:rc1, 4.0.0:beta). 178 of 181 arm:mbed_tls names are deprecated (snapshot 2026-10-08): 165 directly to a:trustedfirmware:mbed_tls and 13 through an intermediate arm name; 2.8.0, 2.19.0 and 2.20.0 are still live and 32 CVEs are configured only on arm:mbed_tls, so emit both. a:mbed:mbedtls is fully deprecated, no CVEs. TF-PSA-Crypto (Mbed TLS 4.x crypto split) is its own entry. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "mbed_tls",
+          "role": "primary",
+          "vendor": "trustedfirmware",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "mbed_tls",
+          "role": "also_emit",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "mbedtls",
+          "role": "never_emit",
+          "vendor": "mbed",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 181,
+        "nvd_cve_count": 51,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "mbedtls-{version}",
+        "url": "https://github.com/Mbed-TLS/mbedtls"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "MCUboot",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/mcu-tools/mcuboot"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Micrium uC/OS",
+      "notes": "[as of 2026-10-07] No uC/OS-II or uC/OS-III kernel product. Related but different products: o:silabs:micrium_os (Silicon Labs Micrium OS 5.x; CVE-2021-27411), a:micrium:uc\\/lib (uC/LIB 1.38.x/1.39.00; CVE-2021-26706), a:micrium:uc-http / a:silabs:micrium_uc-http and a:silabs:uc\\/tcp-ip. The uC/OS kernel versions (2.x/3.x) do not line up with Micrium OS 5.x versions. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Microchip ASF3",
+      "notes": "[as of 2026-10-07] CVE-only NVD criterion (CVE-2024-7490, versionEndIncluding 3.52.0.2574); no CPE dictionary entry. [from the NVD API 2.0 data of 2026-10-07; curated]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "advanced_software_framework",
+          "role": "cve_only",
+          "vendor": "microchip",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Microchip ASF4",
+      "notes": "[as of 2026-10-07] ASF 4 only; ASF 3 (xdk-asf) is the separate row 'Microchip ASF3'. CVE-2019-16127 is configured only on version '-' (NA): a versioned CPE will not match it, check manually. ASF 4 has a single dictionary CPE with version '-' and 1 CVE (CVE-2019-16127, integer overflow). ASF 3 (xdk-asf, up to 3.52.0.2574) is matched by the alternate a:microchip:advanced_software_framework. That pair has NO CPE dictionary names (cpeMatchString count 0), but NVD's configuration for CVE-2024-7490 (tinydhcpserver DHCP buffer overflow, CERT VU#138043) uses cpe:2.3:a:microchip:advanced_software_framework:*:*:*:*:*:*:*:* with versionEndIncluding 3.52.0.2574. For an ASF 3.x component, query that pair with the 3.x version. The asf_4 '-' CPE does not apply to ASF 3. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "advanced_software_framework_4",
+          "role": "primary",
+          "vendor": "microchip",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 1,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "micro-ecc",
+      "notes": "[as of 2026-10-07] A single CPE, version '1.0'. CVE-2020-27209 is an ECDSA power-analysis issue. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "micro-ecc",
+          "role": "primary",
+          "vendor": "micro-ecc_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 1,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "minIni",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "miniz",
+      "notes": "[as of 2026-10-07] Old releases are numbers ('109', '114'); newer ones are 2.0.0 to 2.1.0 (and a stray '22.0.1'). Not minizip (a:zlib-ng:minizip-ng). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "miniz",
+          "role": "primary",
+          "vendor": "miniz_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 16,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/richgel999/miniz"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Mongoose",
+      "notes": "[as of 2026-10-07] Versions are major.minor: 6.18, 7.10, 7.21. Never use a:mongoosejs:mongoose (the Node.js ODM). o:cesanta:mongoose_os is the separate Mongoose OS. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "mongoose",
+          "role": "primary",
+          "vendor": "cesanta",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "mongoose_embedded_web_server_library",
+          "role": "also_emit",
+          "vendor": "cesanta",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 59,
+        "nvd_cve_count": 55,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/cesanta/mongoose"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Monocypher",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/LoupVaillant/Monocypher"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "mpaland printf",
+      "notes": "[as of 2026-10-07] a:adaltas:printf (Node.js) and PrintFriendly are unrelated. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "nanopb",
+      "notes": "[as of 2026-10-07] Four-part and three-part versions (0.3.9.7, 0.4.4), with 'dev' in the update field (0.4.0:dev). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "nanopb",
+          "role": "primary",
+          "vendor": "nanopb_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 49,
+        "nvd_cve_count": 4,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/nanopb/nanopb"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "NetX Duo",
+      "notes": "[as of 2026-10-07] Eclipse: 6.1.11 with 'alpha'/'beta' in the update field, and 6.4.4.202503. Microsoft writes letter suffixes into the version (6.1.11a, 6.1.11b). The two products have different CVEs, so query both. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "threadx_netx_duo",
+          "role": "primary",
+          "vendor": "eclipse",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "azure_rtos_netx_duo",
+          "role": "also_emit",
+          "vendor": "microsoft",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 32,
+        "nvd_cve_count": 21,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "newlib",
+      "notes": "[as of 2026-10-07] Versions 1.9.0 to 3.3.0 and '-'. There are no 4.x CPEs; CVE configs use ranges (e.g. 'prior to 3.3.0'). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "newlib",
+          "role": "primary",
+          "vendor": "newlib_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 23,
+        "nvd_cve_count": 10,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "nghttp2",
+      "notes": "[as of 2026-10-07] Plain semver, e.g. 1.61.0 or 1.69.0. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "nghttp2",
+          "role": "primary",
+          "vendor": "nghttp2",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 134,
+        "nvd_cve_count": 9,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/nghttp2/nghttp2"
+      }
+    },
+    {
+      "header_only": true,
+      "name": "nlohmann/json",
+      "notes": "[as of 2026-10-09] No analyzed NVD record confirms a vendor:product pair, so the CPE is intentionally empty rather than invented.",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/nlohmann/json"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "nRF5 SDK",
+      "notes": "[as of 2026-10-07] Only a:nordicsemi:nrf5_sdk_for_mesh exists (nRF5 SDK for Mesh 5.0; CVE-2022-35623/35624). That is a separate SDK, so it is not mapped here. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "OpenSSL",
+      "notes": "[as of 2026-10-07] Letter-suffixed versions sit in the version field (1.1.1w, 0.9.8zh). Pre-releases go in the update field (3.6.0:alpha1). a:openssl_project:openssl is NOT OpenSSL: it is deprecated to a:rust-openssl_project:rust-openssl. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "openssl",
+          "role": "primary",
+          "vendor": "openssl",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 359,
+        "nvd_cve_count": 303,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "openssl-{version}",
+        "url": "https://github.com/openssl/openssl"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "PCRE",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "pcre",
+          "role": "primary",
+          "vendor": "pcre",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "PCRE2",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "pcre2",
+          "role": "primary",
+          "vendor": "pcre",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "pcre2-{version}",
+        "url": "https://github.com/PCRE2Project/pcre2"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "picolibc",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "protobuf-c",
+      "notes": "[as of 2026-10-07] Versions 1.0.0 to 1.4.1, rc in the update field. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "protobuf-c",
+          "role": "primary",
+          "vendor": "protobuf-c_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 15,
+        "nvd_cve_count": 2,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/protobuf-c/protobuf-c"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Protocol Buffers",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "protobuf-cpp",
+          "role": "primary",
+          "vendor": "google",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "protobuf",
+          "role": "also_emit",
+          "vendor": "google",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/protocolbuffers/protobuf"
+      }
+    },
+    {
+      "header_only": true,
+      "name": "RapidJSON",
+      "notes": "[as of 2026-10-09] No analyzed NVD record confirms a vendor:product pair, so the CPE is intentionally empty rather than invented.",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/Tencent/rapidjson"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Realtek Ameba1 SDK",
+      "notes": "[as of 2026-10-07] SDK for Ameba1 (CVE-2022-29859); not the AmebaD/AmebaDplus SDK. [from the NVD API 2.0 data of 2026-10-07; curated]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "amb1_sdk",
+          "role": "primary",
+          "vendor": "amb1_sdk_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 2,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Realtek AmebaD SDK",
+      "notes": "[as of 2026-10-07] No CPE for the AmebaD/AmebaDplus SDK (ambd_sdk, ameba-rtos) and no RTL872x CPEs. CVE-2025-49604 (AmebaD WLAN defragment heap overflow in ameba-rtos-d/ameba-arduino-d) is Deferred with no configuration. The older Ameba1 SDK is a different SDK with its own product, a:amb1_sdk_project:amb1_sdk. It has 2 names ('-' and '2022-03-11') and 1 CVE: CVE-2022-29859 (DHCP server, versionEndExcluding 2022-03-11). Use it only for an amb1_sdk/Ameba1 component. Related chip-firmware CPEs: o:realtek:rtl8195am_firmware has 4 CVEs (CVE-2020-9395, CVE-2021-43573, CVE-2021-39306, CVE-2022-34326), and o:realtek:rtl8710c_firmware and o:realtek:rtl8195a_firmware carry CVE-2020-27301/27302 ('Ameba-based devices'). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "SafeRTOS",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "SDL2",
+      "notes": "[as of 2026-10-09] The NVD product is the long name, not sdl2.",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "simple_directmedia_layer",
+          "role": "primary",
+          "vendor": "libsdl",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "release-{version}",
+        "url": "https://github.com/libsdl-org/SDL"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Segger emWin",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "SEGGER RTT",
+      "notes": "[as of 2026-10-07] The only SEGGER CPE is a:segger:embos\\/ip_ftp_server (an unrelated FTP server). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Silicon Labs Gecko SDK",
+      "notes": "[as of 2026-10-07] CVE-2022-24939 is configured only on version '-' (NA), check manually. Versions 1.0.0 to 4.4.0, 5.1.x, 6.0.0. Silicon Labs also has separate stack products (a:silabs:emberznet, a:silabs:bluetooth_low_energy_software_development_kit, a:silabs:openthread_sdk, a:silabs:z-wave_software_development_kit, a:silabs:gecko_bootloader) that may carry stack-specific CVEs. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "gecko_software_development_kit",
+          "role": "primary",
+          "vendor": "silabs",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 33,
+        "nvd_cve_count": 30,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "spdlog",
+      "notes": "[as of 2026-10-09] No analyzed NVD record confirms a vendor:product pair, so the CPE is intentionally empty rather than invented.",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/gabime/spdlog"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "SQLite",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "sqlite",
+          "role": "primary",
+          "vendor": "sqlite",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "version-{version}",
+        "url": "https://github.com/sqlite/sqlite"
+      }
+    },
+    {
+      "header_only": true,
+      "name": "stb",
+      "notes": "[as of 2026-10-09] Per-header products under three vendors; every pair is withheld to the alternatives.",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "stb",
+          "role": "primary",
+          "vendor": "stb_project",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "stb_image.h",
+          "role": "primary",
+          "vendor": "nothings",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "stb_vorbis",
+          "role": "primary",
+          "vendor": "stb_vorbis_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32 Cryptographic Library",
+      "notes": "[as of 2026-10-07] No CPE of its own. CVE-2020-20949 (Bleichenbacher, X-CUBE-CRYPTOLIB v3 / UM1924) is configured on STM32Cube<family> package CPEs - check v3.x copies by hand. No product for the crypto library itself. Its one CVE (CVE-2020-20949, Bleichenbacher in X-CUBE-CRYPTOLIB) is configured on the per-family package CPEs a:st:stm32cubef0..wl, e.g. a:st:stm32cubel4, a:st:stm32cubeg0 and a:st:stm32cubeh7. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32CubeG0",
+      "notes": "[as of 2026-10-07] CVE-2020-20949 is configured only on version '-' (NA), check manually. Only version '-'. Its only CVE is CVE-2020-20949 (X-CUBE-CRYPTOLIB). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "stm32cubeg0",
+          "role": "primary",
+          "vendor": "st",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 1,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32CubeL4",
+      "notes": "[as of 2026-10-07] CVE-2020-20949 (on the alternate a:st:stm32cubel4) is configured only on version '-' (NA), check manually. part is 'o'. Versions are the plain package version without 'V': 1.14.0, 1.15.0, 1.15.1, 1.16.0, 1.17.0 and '-'. Newer packages (1.17.x+, 1.18.x) have no dictionary name, but the CVE criteria use version ranges. The CVEs CVE-2020-27212 (<=1.16.0) and CVE-2021-29414 (<=1.17.0) are STM32L4 read-out-protection issues, configured as this firmware running on h:st:stm32l4xx parts. The alternate a:st:stm32cubel4 has only version '-' and carries CVE-2020-20949 (X-CUBE-CRYPTOLIB), so query both. a:st:stm32cubel4\\+ is the separate STM32CubeL4+ package. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "o",
+          "product": "stm32cubel4_firmware",
+          "role": "primary",
+          "vendor": "st",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "stm32cubel4",
+          "role": "also_emit",
+          "vendor": "st",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 6,
+        "nvd_cve_count": 2,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32Cube MCU Packages",
+      "notes": "[as of 2026-10-07] The generic 'STM32Cube MCU & MPU Packages' CPE has versions '-' and 1.8.0 (ref STM32CubeH7 issue 76) and 0 CVEs. The alternate a:st:stm32cube_middleware is CVE-ONLY (no dictionary entry). It holds 6 USB-host CVEs (CVE-2021-34259/34260/34261/34262/34267/34268) with versionEndIncluding 1.8.0, where the version is the STM32Cube package version (STM32CubeH7). NVD also has one product per family: a:st:stm32cubef0, f1, f2, f3, f4, f7, g0, g4, h7, l0, l1, l4, l4\\+, l5, mp1, wb and wl (version '-' only), plus o:st:stm32cubel4_firmware. There is no U5 or U3 product. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "stm32cube_mcu_\\&_mpu_packages",
+          "role": "primary",
+          "vendor": "st",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "stm32cube_middleware",
+          "role": "cve_only",
+          "vendor": "st",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 2,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": true,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32CubeU3",
+      "notes": "[as of 2026-10-07] NVD has no stm32cubeu3 product. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32CubeU5",
+      "notes": "[as of 2026-10-07] NVD has no stm32cubeu5 product. The per-family products are f0, f1, f2, f3, f4, f7, g0, g4, h7, l0, l1, l4, l4+, l5, mp1, wb and wl. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32 HAL Driver",
+      "notes": "[as of 2026-10-07] NVD has no HAL-driver product. The HAL ships inside the STM32Cube MCU packages, and only some packages have CPEs (see the STM32Cube entries). [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32 TouchSensing Library",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32 USB Device Library",
+      "notes": "[as of 2026-10-07] Only the host-side middleware (a:st:stm32_mw_usb_host) has a CPE. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32 USB Host Library",
+      "notes": "[as of 2026-10-07] Six further CVEs (CVE-2021-34259..34268) sit on a:st:stm32cube_middleware with STM32Cube package versions <= 1.8.0. Dictionary versions are '-', 3.3.3, 3.3.4, 3.3.5, 3.4.0, 3.4.1 and 3.5.0. The CPE references github.com/STMicroelectronics/stm32_mw_usb_host. The alternate a:st:stm32cube_middleware is CVE-ONLY (no dictionary entry). It carries 6 USBH_* CVEs (CVE-2021-34259/34260/34261/34262/34267/34268) with versionEndIncluding 1.8.0. That number is the STM32Cube package version (from STM32CubeH7 GitHub issues 75-83), NOT the 3.x USB Host library version. Query it without a version (virtualMatchString=cpe:2.3:a:st:stm32cube_middleware) and judge applicability by hand. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "stm32_mw_usb_host",
+          "role": "primary",
+          "vendor": "st",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 7,
+        "nvd_cve_count": 1,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "STM32 USB Power Delivery library",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "ST MEMS sensor drivers",
+      "notes": "[as of 2026-10-07] The only X-CUBE CPEs are unrelated expansion packages: a:st:x-cube-safea1, a:st:x-cube-azrtos-<family> and a:st:x-cube-azrt-h7rs. There is nothing for sensor (PID) drivers. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "systemd",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "systemd",
+          "role": "primary",
+          "vendor": "systemd_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/systemd/systemd"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "TF-PSA-Crypto",
+      "notes": "[as of 2026-10-09] Its own component, not part of the Mbed TLS row. arm:tf-psa-crypto has no dictionary entry (CVE-2026-34871).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "tf-psa-crypto",
+          "role": "primary",
+          "vendor": "trustedfirmware",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "tf-psa-crypto",
+          "role": "cve_only",
+          "vendor": "arm",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/Mbed-TLS/TF-PSA-Crypto"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "tinycbor",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/intel/tinycbor"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "TinyCrypt",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/intel/tinycrypt"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "TinyXML",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "tinyxml",
+          "role": "primary",
+          "vendor": "tinyxml_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "TinyXML-2",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "tinyxml2",
+          "role": "primary",
+          "vendor": "tinyxml2_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/leethomason/tinyxml2"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "TouchGFX",
+      "notes": "[as of 2026-10-07] [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": 0,
+        "nvd_cve_count": 0,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "Trusted Firmware-M",
+      "notes": "[as of 2026-10-07] part is 'o'. Versions run from 1.0 and 1.1, then 1.2.0 to 2.1.1. rc/beta go in the update field (1.8.0:rc1), and a final release that has rc siblings carries update '-' (1.8.0:-). o:arm, a:linaro and a:trustedfirmware are deprecated to this name. a:arm:trusted_firmware-m is deprecated to o:arm:trusted_firmware-m. o:arm:trusted_firmware_m_firmware (1.2, '-') is still active. All alternates have 0 CVEs. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "o",
+          "product": "trusted_firmware-m",
+          "role": "primary",
+          "vendor": "trustedfirmware",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "trusted_firmware-m",
+          "role": "never_emit",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "trusted_firmware-m",
+          "role": "never_emit",
+          "vendor": "arm",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "trusted_firmware-m",
+          "role": "never_emit",
+          "vendor": "linaro",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "trusted_firmware-m",
+          "role": "never_emit",
+          "vendor": "trustedfirmware",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "trusted_firmware_m_firmware",
+          "role": "also_emit",
+          "vendor": "arm",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 48,
+        "nvd_cve_count": 6,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "uIP",
+      "notes": "[as of 2026-10-07] Versions 0.5, 0.6, 0.9, 1.0. Contiki and Contiki-NG uIP copies are also tracked as o:contiki-os:contiki and o:contiki-ng:contiki-ng. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "uip",
+          "role": "primary",
+          "vendor": "uip_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 4,
+        "nvd_cve_count": 7,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "USBX",
+      "notes": "[as of 2026-10-07] Versions run 6.0 to 6.4.2, then 6.4.3.202503; a stray '6.4.3.2025' name also exists. Two CVE-ONLY names (no dictionary entry) carry extra, disjoint CVEs: o:eclipse:threadx_usbx has 5 (CVE-2025-55096..55100, < 6.4.3.202503), and a:microsoft:azure_rtos_usbx has 1 (CVE-2022-39344, < 6.1.12). Query the primary plus both of these. o:microsoft:azure_rtos_usbx is fully deprecated to a:eclipse:threadx_usbx and has 0 CVEs. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "threadx_usbx",
+          "role": "primary",
+          "vendor": "eclipse",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "threadx_usbx",
+          "role": "also_emit",
+          "vendor": "eclipse",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "azure_rtos_usbx",
+          "role": "also_emit",
+          "vendor": "microsoft",
+          "version_scope": null
+        },
+        {
+          "part": "o",
+          "product": "azure_rtos_usbx",
+          "role": "never_emit",
+          "vendor": "microsoft",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 23,
+        "nvd_cve_count": 10,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": true,
+      "name": "uthash",
+      "notes": "[as of 2026-10-09] No analyzed NVD record confirms a vendor:product pair, so the CPE is intentionally empty rather than invented.",
+      "pairs": [],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "no-nvd-cpe",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/troydhanson/uthash"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "wolfSSL",
+      "notes": "[as of 2026-10-07] Versions from 0.5 to 5.9.2 (e.g. 5.6.6, 5.9.2). Letter suffixes go in the version field (3.10.0a, 4.2.0c) and rc in the update field (4.0:rc1). CyaSSL (the pre-wolfSSL name) has a separate product, a:yassl:cyassl, with 6 names (2.5.0-2.9.4) and 4 CVEs (CVE-2012-1558, CVE-2013-1623, CVE-2014-2899, CVE-2014-2900); query it too for CyaSSL-era versions. a:wolfssl:wolfcrypt has one '-' CPE and 0 CVEs. a:wolfssl:yassl (the yaSSL C++ library), wolfboot, wolfmqtt, wolfprovider and wolfengine are separate products. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "wolfssl",
+          "role": "primary",
+          "vendor": "wolfssl",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "cyassl",
+          "role": "also_emit",
+          "vendor": "yassl",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "wolfcrypt",
+          "role": "also_emit",
+          "vendor": "wolfssl",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 132,
+        "nvd_cve_count": 151,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}-stable",
+        "url": "https://github.com/wolfSSL/wolfssl"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "wpa_supplicant",
+      "notes": "[as of 2026-10-07] Versions 0.2.0 to 2.10, e.g. '2.9' and '2.10'. Embedded copies inside vendor SDKs (Realtek, ESP-IDF) are usually forks with no upstream version. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "wpa_supplicant",
+          "role": "primary",
+          "vendor": "w1.fi",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 77,
+        "nvd_cve_count": 39,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": null
+    },
+    {
+      "header_only": false,
+      "name": "XZ Utils",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "xz",
+          "role": "primary",
+          "vendor": "tukaani",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/tukaani-project/xz"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "yaml-cpp",
+      "notes": "[as of 2026-10-09] Observed in NVD CVE configurations (vulnerable criteria).",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "yaml-cpp",
+          "role": "primary",
+          "vendor": "yaml-cpp_project",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "research note cpe_lookup.md §4 (fkie-cad CVE configurations)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "{version}",
+        "url": "https://github.com/jbeder/yaml-cpp"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Zephyr",
+      "notes": "[as of 2026-10-07] part is 'o'. Versions 1.0.0 to 4.4.1, rc in the update field (4.3.0:rc1). a:zephyrproject:zephyr is fully deprecated to the 'o' product and has 0 CVEs. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "o",
+          "product": "zephyr",
+          "role": "primary",
+          "vendor": "zephyrproject",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "zephyr",
+          "role": "never_emit",
+          "vendor": "zephyrproject",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 185,
+        "nvd_cve_count": 189,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/zephyrproject-rtos/zephyr"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "zlib",
+      "notes": "[as of 2026-10-07] Versions 1.2.11, 1.2.13, 1.3, 1.3.1. a:gnu:zlib is fully deprecated to zlib:zlib and has 0 CVEs. Not cloudflare:zlib or ruby-lang:zlib. [NVD API 2.0, 2026-10-07; checked by two independent agents]",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "zlib",
+          "role": "primary",
+          "vendor": "zlib",
+          "version_scope": null
+        },
+        {
+          "part": "a",
+          "product": "zlib",
+          "role": "never_emit",
+          "vendor": "gnu",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": 84,
+        "nvd_cve_count": 14,
+        "source": "vibe-sbomber cpe-dictionary.csv de7a76b",
+        "verified_on": "2026-10-07"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/madler/zlib"
+      }
+    },
+    {
+      "header_only": false,
+      "name": "Zstandard",
+      "notes": "[as of 2026-10-09] The NVD product is zstandard, not zstd.",
+      "pairs": [
+        {
+          "part": "a",
+          "product": "zstandard",
+          "role": "primary",
+          "vendor": "facebook",
+          "version_scope": null
+        }
+      ],
+      "provenance": {
+        "nvd_cpe_count": null,
+        "nvd_cve_count": null,
+        "source": "report NVD table (fkie-cad)",
+        "verified_on": "2026-10-09"
+      },
+      "status": "mapped",
+      "toolchain_runtime": false,
+      "umbrella": false,
+      "upstream": {
+        "purl_type": "github",
+        "tag_format": "v{version}",
+        "url": "https://github.com/facebook/zstd"
+      }
+    }
+  ],
+  "generated": "2026-10-10",
+  "schema": 1,
+  "source": "seeded from vibe-sbomber cpe-dictionary.csv (de7a76b) with the review's corrections, plus the report's NVD-verified pairs and the general-purpose libraries of research note cpe_lookup.md section 4; authorship and licence of the Vibe-Sbomber data are to be confirmed (the repository has no LICENSE file)"
+}

@@ -1,0 +1,226 @@
+{
+  "title": "Stage 3 verification ledger 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "protocolVersion",
+    "issueIndexSha256",
+    "corpusDigest",
+    "updatedAt",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "protocolVersion": {
+      "const": "2.0"
+    },
+    "issueIndexSha256": {
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "corpusDigest": {
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "queueKey",
+          "state",
+          "attempts",
+          "acceptedResult",
+          "inlineResultSha256",
+          "history"
+        ],
+        "properties": {
+          "queueKey": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "pending",
+              "attempt-1-invoked",
+              "attempt-1-rejected",
+              "attempt-2-invoked",
+              "accepted",
+              "inline",
+              "terminal"
+            ]
+          },
+          "attempts": {
+            "type": "array",
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "number",
+                "requestPath",
+                "requestSha256",
+                "resultPath",
+                "resultSha256",
+                "outcome",
+                "defectCode",
+                "defect"
+              ],
+              "properties": {
+                "number": {
+                  "enum": [
+                    1,
+                    2
+                  ]
+                },
+                "requestPath": {
+                  "type": "string"
+                },
+                "requestSha256": {
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "resultPath": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "resultSha256": {
+                  "anyOf": [
+                    {
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "outcome": {
+                  "enum": [
+                    "invoked",
+                    "accepted",
+                    "rejected"
+                  ]
+                },
+                "defectCode": {
+                  "enum": [
+                    null,
+                    "malformed result",
+                    "schema invalid",
+                    "invalid invocation",
+                    "transient execution",
+                    "unreadable source",
+                    "digest mismatch"
+                  ]
+                },
+                "defect": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "model": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "effort": {
+                  "enum": [
+                    null,
+                    "low",
+                    "medium",
+                    "high",
+                    "xhigh",
+                    "max",
+                    "unspecified"
+                  ]
+                }
+              }
+            }
+          },
+          "acceptedResult": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "inlineResultSha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "at",
+                "from",
+                "to",
+                "reason"
+              ],
+              "properties": {
+                "at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "from": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "to": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "inlineModel": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "inlineEffort": {
+            "enum": [
+              null,
+              "low",
+              "medium",
+              "high",
+              "xhigh",
+              "max",
+              "unspecified"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

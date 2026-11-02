@@ -1,0 +1,5 @@
+# Device and embedded lens
+
+Permitted refinements: execution unit/peripheral→`P|EE`; firmware/bootloader/image→stored `DS` and executing `P`; boot/recovery stage→`P`; sensor/actuator→device `P` plus physical-world `EE`; debug/test/maintenance interface→`EP` and `DF`; update package/channel→`DS`/`DF`; secure element/trust anchor→`DS` plus operation `P`.
+
+Anchored questions: `DEVICE-01` secure-boot chain and image/config authentication; `DEVICE-02` update provenance, atomicity, anti-rollback, and power-loss recovery; `DEVICE-03` debug/test port lifecycle controls; `DEVICE-04` forged/replayed sensor input; `DEVICE-05` actuator authorization and safety interlocks; `DEVICE-06` key provisioning, extraction, rotation, and cloning; `DEVICE-07` DMA/bus/IPC isolation; `DEVICE-08` manufacturing, ownership, service/RMA, reset, and decommissioning; `DEVICE-09` CPU/memory/storage-wear/power/radio bounds; `DEVICE-10` fault injection, side channels, tamper evidence, offline logs, residual data, and physical supply chain.

@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "category": "memory-safety",
+  "validator": "sec-val-memory-safety",
+  "rules": [
+    {
+      "rule_id": "MEM-001",
+      "title": "unbounded string copy",
+      "cwe": "CWE-120",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:strcpy|strcat|stpcpy|wcscpy|wcscat|lstrcpyA?W?|_tcscpy|StrCpy|sprintf|vsprintf)\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "unbounded string copy: the destination takes no length argument",
+      "flag_condition": "every hit is a candidate",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "copy",
+      "threat_model": null,
+      "derived": false,
+      "high_signal": true,
+      "weight": 3
+    },
+    {
+      "rule_id": "MEM-002",
+      "title": "memcpy with untrusted size",
+      "cwe": "CWE-787",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:memcpy|memmove|bcopy|wmemcpy|wmemmove|CopyMemory|RtlCopyMemory|memcpy_s|copy_from_user|copy_to_user|memcpy_toio|memcpy_fromio)\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "third argument is a variable, not sizeof(dest)",
+      "flag_condition": "flag when the size argument is not sizeof(<dest>)",
+      "skip_clause": "third argument is literally sizeof(<dest>)",
+      "skip_pattern": "\\b(?:memcpy|memmove|CopyMemory|RtlCopyMemory|copy_from_user|copy_to_user|memcpy_toio|memcpy_fromio)\\s*\\(\\s*&?\\s*([A-Za-z_][A-Za-z0-9_]*(?:\\s*(?:->|\\.)\\s*[A-Za-z_][A-Za-z0-9_]*)*)\\s*,[^,()]*,\\s*sizeof\\s*(?:\\(\\s*\\*?\\s*\\1\\s*\\)|\\*?\\s*\\1\\b)\\s*\\)",
+      "wrapper_class": "copy",
+      "threat_model": null,
+      "derived": false,
+      "high_signal": true,
+      "weight": 3
+    },
+    {
+      "rule_id": "MEM-003",
+      "title": "bounded copy misuse",
+      "cwe": "CWE-787",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:strncpy|strncat|strlcpy|strlcat|strcpy_s|strncpy_s|wcsncpy|memset)\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "bounded copy whose size argument is derived from the source, not the destination",
+      "flag_condition": "flag when the size argument mentions the source, uses strlen(src), or uses sizeof(ptr) on a pointer rather than an array",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "copy",
+      "threat_model": null,
+      "derived": false,
+      "high_signal": false,
+      "weight": 2
+    },
+    {
+      "rule_id": "MEM-004",
+      "title": "bounded formatted output",
+      "cwe": "CWE-787",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:snprintf|vsnprintf|_snprintf|_vsnprintf|swprintf|_snwprintf|snprintf_s)\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "bounded formatted output whose return value or NUL-termination is relied on",
+      "flag_condition": "flag when the return value is used as a length (it is the length that WOULD have been written), or when the call is in the _snprintf family, which gives no NUL guarantee. Scout table records this rule as CWE-787/120; CWE-787 is carried on the record",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "printf",
+      "threat_model": null,
+      "derived": false,
+      "high_signal": false,
+      "weight": 2
+    },
+    {
+      "rule_id": "MEM-005",
+      "title": "untrusted read into fixed buffer",
+      "cwe": "CWE-120",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:read|pread|recv|recvfrom|recvmsg|fread|fgets|readlink|readlinkat|getline|ReadFile|InternetReadFile)\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "read length argument is not sizeof(dest)",
+      "flag_condition": "flag when the length argument is not sizeof(<dest>)",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "read",
+      "threat_model": null,
+      "derived": false,
+      "high_signal": false,
+      "weight": 2
+    },
+    {
+      "rule_id": "MEM-006",
+      "title": "unbounded scanf",
+      "cwe": "CWE-120",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:scanf|fscanf|sscanf|vscanf|vsscanf|swscanf|wscanf)\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "scanf-family conversion into a fixed buffer",
+      "flag_condition": "flag when the format string contains %s or %[ WITHOUT a field width. This is a positive flag condition, not a skip clause: a format the extractor cannot read (built at runtime, in a macro, on another line) is EMITTED and the validator settles it",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": null,
+      "derived": false,
+      "high_signal": false,
+      "weight": 2
+    },
+    {
+      "rule_id": "MEM-007",
+      "title": "inherently unsafe input",
+      "cwe": "CWE-242",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:gets|getwd|getpass|mktemp|tmpnam|tempnam|alloca)\\b|(?:^|\\W)realpath\\s*\\(",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "call to a function with no safe usage, or to realpath, whose output buffer must hold PATH_MAX bytes",
+      "flag_condition": "gets/getwd are unconditional candidates; realpath is a candidate unless its second argument is NULL (the library allocates), and a caller buffer must be declared at least PATH_MAX - an earlier form matched only the NULL call, which is the safe one; the rest are candidates wherever they appear",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": null,
+      "derived": false,
+      "high_signal": true,
+      "weight": 3
+    },
+    {
+      "rule_id": "MEM-008",
+      "title": "UAF/double-free",
+      "cwe": "CWE-416",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:free|kfree|vfree|g_free|xfree|release|destroy|_close|cleanup|fclose|closedir|BIO_free|EVP_[A-Z_]{1,64}_free)\\s*\\(|\\bdelete\\b\\s*(?:\\[\\s*\\])?\\s*[A-Za-z_(]",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "release of a resource; the validator looks for a later use of it",
+      "flag_condition": "the candidate is the freeing call itself. Scout table records this rule as CWE-416/415; CWE-416 is carried on the record",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "alloc",
+      "threat_model": null,
+      "derived": false,
+      "high_signal": true,
+      "weight": 3
+    },
+    {
+      "rule_id": "MEM-009",
+      "title": "use-after-return",
+      "cwe": "CWE-562",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "return\\s+&\\w+|return\\s+\\w*buf\\w{0,64}\\s*;|char\\s+\\w+\\s*\\[\\s*\\d+\\s*\\][\\s\\S]{0,4000}?return",
+      "multiline": true,
+      "match_target": "line",
+      "why_flagged": "a local address or a local buffer appears to escape the function",
+      "flag_condition": "also flag globals and out-params assigned &local. The third branch spans lines and is why this rule is multiline: ripgrep matches line by line unless -U/--multiline is passed, so this pattern silently returns nothing without it",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": null,
+      "derived": false,
+      "high_signal": false,
+      "weight": 2
+    },
+    {
+      "rule_id": "MEM-010",
+      "title": "allocation size overflow",
+      "cwe": "CWE-190",
+      "languages": [
+        "c",
+        "cpp"
+      ],
+      "pattern": "\\b(?:malloc|calloc|realloc|reallocarray|alloca|kmalloc|kzalloc|vmalloc|OPENSSL_malloc|g_malloc)\\s*\\(|\\bnew\\s+\\w+\\s*\\[",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "allocation size is a computed expression",
+      "flag_condition": "flag when the size expression contains *, +, << or a non-size_t variable",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": "alloc",
+      "threat_model": null,
+      "derived": false,
+      "high_signal": false,
+      "weight": 2
+    },
+    {
+      "rule_id": "MEM-011",
+      "title": "Rust unsafe",
+      "cwe": "CWE-119",
+      "languages": [
+        "rust"
+      ],
+      "pattern": "\\bunsafe\\s*\\{|from_raw_parts(?:_mut)?|transmute|get_unchecked(?:_mut)?|set_len\\s*\\(|\\.offset\\s*\\(|\\.add\\s*\\(|MaybeUninit|assume_init|ptr::(?:copy|write|read)|#\\[no_mangle\\]|extern\\s+\\\"C\\\"",
+      "multiline": false,
+      "match_target": "line",
+      "why_flagged": "raw-memory or FFI construct outside Rust's checked subset",
+      "flag_condition": "every hit is a candidate",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": null,
+      "derived": false,
+      "high_signal": false,
+      "weight": 2
+    },
+    {
+      "rule_id": "MEM-WFS",
+      "title": "whole-function scan",
+      "cwe": "CWE-119",
+      "languages": [
+        "c",
+        "cpp",
+        "rust"
+      ],
+      "pattern": null,
+      "multiline": false,
+      "match_target": null,
+      "why_flagged": "whole-function memory-safety pass, not a matched sink",
+      "flag_condition": "the seven questions of the whole-function pass: off-by-one heap/stack writes, Heartbleed-shaped over-reads, NULL-deref of unchecked returns, UAF that is not at a matched sink, division or modulo by zero, uninitialised use, and unchecked return values generally. A pass that found nothing closes on FP-WFS-CLEAN, with each of the seven answers cited in gates_evaluated Q1-Q7, and on no other code. A dismissal on the ground that a sibling candidate already covered the sink is refused (wfs_dismissal_by_sibling): that sentence is true of every MEM-WFS candidate the derivation can produce and so says nothing about this one",
+      "skip_clause": null,
+      "skip_pattern": null,
+      "wrapper_class": null,
+      "threat_model": null,
+      "derived": true,
+      "high_signal": false,
+      "weight": 2,
+      "derivation": "Not grep-driven. After all six category files are written, take the distinct (file, function) pairs across the six emitted candidates/<category>.json files - deferred queues excluded, because a deferred candidate was never dispatched - whose function's language is in this rule's languages, and synthesize exactly one MEM-WFS candidate per pair. languages is c, cpp and rust: the seven questions are about raw memory, and over the eight garbage-collected languages it once listed too the pass cost one validator call per function with a hit and found nothing (all 21 on Python and Go in one end-to-end run closed FP-WFS-CLEAN), while Rust keeps it for its unsafe blocks and FFI. line is the function's opening line (function_range[0]); sink_text is read from that line off disk like any other candidate; why_flagged states the whole-function pass rather than a sink. MEM-WFS.emitted in coverage.json must equal that distinct-pair count (coverage invariant I5, which takes its pairs only from candidates in the languages coverage.json records for MEM-WFS), and the named function must match \\b<name>\\s*\\( in the file beside it (wfs_function_absent). The scout table records this rule's CWE as `multi`; CWE-119 is the umbrella class carried on the record and the validator narrows it."
+    }
+  ]
+}
